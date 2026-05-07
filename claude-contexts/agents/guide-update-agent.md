@@ -1,7 +1,7 @@
 # Guide update agent
 
 **Domain:** all  
-**Layer:** 3a — Output  
+**Layer:** 3 — Drafting  
 **Runs:** When any item from mediation has `route: "guide-update"`
 
 ## Role
@@ -53,16 +53,9 @@ Constraints:
 - Write proposed_content in the same voice as the rest of the guide — factual, no marketing language.
 ```
 
-## Human review gate
+## Human review
 
-Before any change commits to the universal guide:
-
-- All four team members (Jon, Gelo, Dia, Daniela) receive a review summary
-- Each proposed change shows: section affected, current content, proposed content, source, rationale
-- Approval required before committing; rejection logs reason and returns item to backlog
-- If approved: section is updated, `last_verified` date is stamped, change is logged
-
-**Turnaround target:** 48 hours.
+This agent does not run its own review gate. Output lands in the staging directory and is reviewed at the central Layer 5 gate alongside the mediation agent's thought-process report — see [`../../ai-pipeline.md#layer-5--human-review-gate`](../../ai-pipeline.md#layer-5--human-review-gate). On approval, the section is updated, `last_verified` is stamped, and the change is logged.
 
 ## New section candidates
 
