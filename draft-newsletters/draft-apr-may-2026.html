@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Draft — April & May 2026 Sample Editions · Suger Cube</title>
+<style>
+  /* Pipeline draft — inline-style fallback for email/staging review */
+  body { font-family: Inter, system-ui, sans-serif; background: #f8f8f8; color: #1a1a2e; margin: 0; padding: 24px; }
+  .draft-banner { background: #FEF3C7; border: 1.5px solid #F59E0B; border-radius: 6px; padding: 12px 16px; margin-bottom: 32px; font-size: 13px; color: #92400E; }
+  .draft-banner strong { display: block; margin-bottom: 4px; }
+  .edition { background: #fff; border-radius: 8px; box-shadow: 0 1px 4px rgba(0,0,0,.08); margin-bottom: 48px; overflow: hidden; }
+  .edition-header { background: #1a1a2e; color: #fff; padding: 32px 40px 24px; }
+  .edition-eyebrow { font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: #F26A1C; font-family: Lexend, sans-serif; margin-bottom: 8px; }
+  .edition-title { font-family: Lexend, sans-serif; font-size: 22px; font-weight: 700; line-height: 1.3; margin: 0 0 10px; }
+  .edition-desc { font-size: 14px; color: rgba(255,255,255,.75); margin: 0; line-height: 1.6; }
+  .section-header { padding: 12px 40px; background: #f3f4f6; border-top: 1px solid #e5e7eb; border-bottom: 1px solid #e5e7eb; display: flex; justify-content: space-between; align-items: center; }
+  .section-label { font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: #6b7280; }
+  .section-date { font-size: 11px; color: #9ca3af; }
+  .topic { padding: 32px 40px; border-bottom: 1px solid #f0f0f0; }
+  .topic--featured { border-left: 4px solid #F26A1C; }
+  .topic-eyebrow { display: flex; align-items: center; gap: 8px; margin-bottom: 10px; flex-wrap: wrap; }
+  .topic-num { font-size: 11px; font-weight: 700; color: #9ca3af; }
+  .tag-pill { font-size: 11px; font-weight: 600; padding: 2px 8px; border-radius: 999px; }
+  .badge { font-size: 11px; font-weight: 600; padding: 2px 8px; border-radius: 4px; }
+  .badge--news { background: #DBEAFE; color: #1D4ED8; }
+  .badge--edu { background: #D1FAE5; color: #065F46; }
+  .topic-title { font-family: Lexend, sans-serif; font-size: 18px; font-weight: 700; margin: 0 0 4px; line-height: 1.3; }
+  .topic-subtitle { font-size: 14px; color: #6b7280; margin: 0 0 12px; }
+  .topic-intro { font-size: 14px; line-height: 1.7; color: #374151; margin: 0 0 24px; }
+  .hs-section { margin-bottom: 20px; padding: 16px; background: #f9fafb; border-radius: 6px; border-left: 3px solid #e5e7eb; }
+  .hs-head { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
+  .hs-badge { font-size: 11px; font-weight: 700; padding: 2px 8px; border-radius: 4px; white-space: nowrap; }
+  .hs-headline { font-size: 13px; font-weight: 700; color: #1a1a2e; margin: 0; }
+  .hs-body { font-size: 13px; line-height: 1.7; color: #374151; margin: 0 0 8px; }
+  .hs-source { font-size: 12px; color: #6b7280; text-decoration: none; border-bottom: 1px solid #e5e7eb; }
+  .implications { background: #1a1a2e; border-radius: 6px; padding: 16px 20px; margin-top: 20px; }
+  .implications-label { font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: #F26A1C; margin-bottom: 6px; }
+  .implications-body { font-size: 13px; line-height: 1.7; color: rgba(255,255,255,.85); margin: 0; }
+  /* Tag colors */
+  .aws { background: #FEF3C7; color: #92400E; }
+  .azure { background: #DBEAFE; color: #1D4ED8; }
+  .gcp { background: #E0E7FF; color: #3730A3; }
+  .snowflake { background: #BAE6FD; color: #0369A1; }
+  /* HS section border colors */
+  .hs-aws { border-left-color: #FF9900; }
+  .hs-azure { border-left-color: #0078D4; }
+  .hs-gcp { border-left-color: #4285F4; }
+  /* verify marker */
+  .verify { background: #FEF3C7; border: 1px solid #F59E0B; border-radius: 3px; font-size: 10px; font-weight: 700; color: #92400E; padding: 1px 4px; vertical-align: middle; }
+</style>
+</head>
+<body>
+
+<div class="draft-banner">
+  <strong>PIPELINE DRAFT — GATE 2 REVIEW</strong>
+  Run ID: dry-run-apr-may-2026 · Generated: 2026-05-08 · Status: Pending human approval<br>
+  Do not publish. Gate 1 (thought process report) must be approved before reviewing this draft.<br>
+  Topic data is structured for direct transfer to <code>data/topics.js</code> and <code>data/newsletters.js</code> after Gate 2 approval.
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════════ -->
+<!-- APRIL 2026 — ISSUE 04                                             -->
+<!-- ═══════════════════════════════════════════════════════════════════ -->
+
+<div class="edition">
+  <div class="edition-header">
+    <div class="edition-eyebrow">Issue 04 · April 2026 — Sample Edition</div>
+    <h1 class="edition-title">Sample — Cloud Next 2026 Opens the Agent Era, Faster Private Offers, and Committed Spend Decoded</h1>
+    <p class="edition-desc">GCP's Agent Marketplace goes live with $750M behind it, AWS and Azure close faster with Express Offers and renewal fee cuts, and a plain-English breakdown of EDP, MACC, and GCP committed spend for sales teams.</p>
+  </div>
+
+  <!-- WHAT'S NEW section -->
+  <div class="section-header">
+    <span class="section-label">What's new</span>
+    <span class="section-date">April 2026</span>
+  </div>
+
+  <!-- TOPIC A-1: Agent Marketplace — FEATURED -->
+  <div class="topic topic--featured" id="sample-apr-agent-marketplace">
+    <div class="topic-eyebrow">
+      <span class="topic-num">01</span>
+      <span class="tag-pill gcp">GCP</span>
+      <span class="tag-pill aws">AWS</span>
+      <span class="tag-pill azure">Azure</span>
+      <span class="badge badge--news">What's new · April 2026</span>
+    </div>
+    <h2 class="topic-title">Google Cloud Next 2026: The Agent Marketplace Opens for ISVs</h2>
+    <p class="topic-subtitle">A new distribution channel for AI agents — with $750M backing and 70 launch partners</p>
+    <p class="topic-intro">Google Cloud Next 2026 — held late April in Las Vegas with 32,000 attendees — delivered the biggest ISV distribution announcement since SaaS listings: the launch of the Agent Marketplace, a dedicated channel for partner-built AI agents inside Google Cloud. With $750M in partner funding committed and 70 pre-built agents from Salesforce, SAP, Workday, and Atlassian at launch, this is not a roadmap item. For ISVs who've been watching the agent space, the window to establish a first-mover position is now.</p>
+
+    <div class="hs-sections">
+      <div class="hs-section hs-gcp">
+        <div class="hs-head">
+          <span class="hs-badge gcp">GCP</span>
+          <h3 class="hs-headline">Agent Marketplace Launched: 70 Partners, $750M Fund, Direct Enterprise Distribution</h3>
+        </div>
+        <p class="hs-body">Google Cloud launched the Agent Marketplace at Next 2026, making 70+ pre-built partner agents from Salesforce, SAP, ServiceNow, Workday, Atlassian, Box, Oracle, and Palo Alto Networks discoverable inside Gemini Enterprise without a separate purchase decision. A $750M partner innovation fund backs the program with engineering support, tooling credits, and go-to-market incentives for qualifying ISVs — and Google simultaneously introduced forward-deployed Google Cloud engineers for customers of select strategic partners. A dedicated Partner Summit on April 21 gave ecosystem partners early roadmap access before the main event. Submit to the Agent Marketplace partner program at cloud.google.com before the category fills — it is live, not pending.</p>
+        <a href="https://cloud.google.com/blog/topics/google-cloud-next/google-cloud-next-2026-wrap-up" class="hs-source" target="_blank" rel="noopener">Google Cloud Next 2026 Wrap Up</a>
+      </div>
+
+      <div class="hs-section hs-aws">
+        <div class="hs-head">
+          <span class="hs-badge aws">AWS</span>
+          <h3 class="hs-headline">Bedrock Multi-Agent: The Enterprise-Stable Position</h3>
+        </div>
+        <p class="hs-body">AWS entered Q2 2026 with Bedrock multi-agent collaboration generally available since March 2025 and Nova Premier available since April 2025 — positioned as the proven enterprise AI orchestration platform for ISVs who need stability, not a new marketplace surface. ISV Accelerate co-sell teams are actively prioritizing Bedrock-integrated listings in their Q2 pipeline, which means your ACE opportunity descriptions need to explicitly document Bedrock integration to receive preferential field attention. If your product runs on or integrates with Bedrock and that's not in your ACE opportunity, fix that this week.</p>
+        <a href="https://aws.amazon.com/partners/programs/isv-accelerate/" class="hs-source" target="_blank" rel="noopener">AWS ISV Accelerate Program</a>
+      </div>
+
+      <div class="hs-section hs-azure">
+        <div class="hs-head">
+          <span class="hs-badge azure">Azure</span>
+          <h3 class="hs-headline">Copilot Studio: Agent Distribution Through M365's Installed Base</h3>
+        </div>
+        <p class="hs-body">Rather than launching a competing agent directory, Microsoft doubled down on Copilot Studio's distribution advantage: agents built with Foundry run inside Teams, Outlook, and SharePoint — reaching enterprise knowledge workers where they already operate, without requiring a new purchase decision. ISVs with Copilot Studio-integrated agents qualify for Azure IP Co-sell Incentivized status, unlocking Microsoft's full sales motion. For ISVs evaluating platform investment, the Microsoft bet is reach through M365's installed base rather than a new discovery surface — a different constraint to design for, but one with significantly larger day-one enterprise reach. Document your Copilot integration in Partner Center if you haven't; it triggers the co-sell designation review.</p>
+        <a href="https://learn.microsoft.com/en-us/azure/foundry/" class="hs-source" target="_blank" rel="noopener">Microsoft Foundry Documentation</a>
+      </div>
+    </div>
+
+    <div class="implications">
+      <div class="implications-label">What this means for you</div>
+      <p class="implications-body">GCP's Agent Marketplace is a real distribution channel, not a pilot — and the first wave of enterprise buyer searches will set discoverability patterns that compound as the category matures. Agents listed early with specific enterprise use cases convert better than generic capability platforms, and that pattern is already visible one month into the launch. For ISVs on AWS and Azure, this is not a forced choice: multicloud agent listings are the right strategy, and Bedrock and Copilot Studio distribution advantages are not going away. The practical action for any ISV with AI capability: update marketplace listing descriptions on all three clouds to explicitly describe agent compatibility before Q3 2026.</p>
+    </div>
+  </div>
+
+  <!-- TOPIC A-2: Private Offer updates -->
+  <div class="topic" id="sample-apr-express-deals">
+    <div class="topic-eyebrow">
+      <span class="topic-num">02</span>
+      <span class="tag-pill aws">AWS</span>
+      <span class="tag-pill azure">Azure</span>
+      <span class="tag-pill gcp">GCP</span>
+      <span class="badge badge--news">What's new · April 2026</span>
+    </div>
+    <h2 class="topic-title">Faster Private Offers and Lower Renewal Fees: Deal Mechanics Changed</h2>
+    <p class="topic-subtitle">Three updates that reduce time-to-close and improve net margin on marketplace deals</p>
+    <p class="topic-intro">Private offer mechanics across AWS, Azure, and GCP all changed in the past 12 months — separately, on different timelines, but pointing in the same direction: making enterprise deals faster to close, cheaper to renew, and more channel-friendly. Each update is specific enough to affect how you structure your next deal.</p>
+
+    <div class="hs-sections">
+      <div class="hs-section hs-aws">
+        <div class="hs-head">
+          <span class="hs-badge aws">AWS</span>
+          <h3 class="hs-headline">Express Private Offers + Installment CPPOs: Two Deal Friction Points Removed</h3>
+        </div>
+        <p class="hs-body">AWS launched Express Private Offers in November 2025, cutting private offer creation time from hours to minutes for sellers managing high-velocity pipeline. Flexible payment scheduling expanded to Channel Partner Private Offers in February 2025, letting resellers structure installment-based deals directly in the marketplace without going off-platform. Together, these close the two most common reasons complex enterprise deals left the marketplace: setup friction and the inability to match enterprise payment terms. Apply Express Private Offers to any time-sensitive opportunity; enable installment CPPOs for any channel deal where annual upfront pricing is the blocker.</p>
+        <a href="https://docs.aws.amazon.com/marketplace/latest/userguide/private-offers-overview.html" class="hs-source" target="_blank" rel="noopener">AWS Marketplace Private Offers</a>
+      </div>
+
+      <div class="hs-section hs-azure">
+        <div class="hs-head">
+          <span class="hs-badge azure">Azure</span>
+          <h3 class="hs-headline">30-Day Offer Expiry + 1.5% Renewal Fee: Two Changes That Improve Your Margin</h3>
+        </div>
+        <p class="hs-body">Azure extended private offer expiry from 14 to 30 days, giving enterprise buyers more runway for internal approval processes without the offer lapsing mid-cycle. On renewals, Microsoft's store service fee dropped to 1.5% — half the standard 3% rate — for the full renewal term. On a $2M annual renewal, that's $30K in additional margin that doesn't require any pricing change on your end. Update any CRM automation, expiry alerts, or notification rules still calibrated to the old 14-day window — those will misfire under the new default.</p>
+        <a href="https://learn.microsoft.com/en-us/partner-center/marketplace-offers/marketplace-commercial-transaction-capabilities-and-considerations" class="hs-source" target="_blank" rel="noopener">Azure Marketplace Transaction Capabilities</a>
+      </div>
+
+      <div class="hs-section hs-gcp">
+        <div class="hs-head">
+          <span class="hs-badge gcp">GCP</span>
+          <h3 class="hs-headline">MCPO 100% Commit Drawdown: Channel Deals Now Draw Down Like Direct Purchases</h3>
+        </div>
+        <p class="hs-body">GCP's Marketplace Channel Private Offers have qualified for 100% commit drawdown against customer GCP committed spend since June 2025 — capped at 25% of the total commitment, same rate as direct GCP purchases. GCP's variable revenue share model, effective April 2025, also charges 1.5% on renewals (down from 3% on new transactions), improving ISV net margin on the renewal side of your GCP book. Combined, channel-transacted GCP deals are now as financially attractive to buyers as direct purchases, and cheaper for ISVs to process on renewal volume. Ask your channel team whether buyers have committed GCP spend — if yes, the MCPO drawdown eligibility is a closing argument.</p>
+        <a href="https://cloud.google.com/marketplace/docs/partners/integrated-saas/create-channel-private-offer" class="hs-source" target="_blank" rel="noopener">GCP Marketplace Channel Private Offers</a>
+      </div>
+    </div>
+
+    <div class="implications">
+      <div class="implications-label">What this means for you</div>
+      <p class="implications-body">ISVs who've been routing complex deals off-marketplace to handle installments, channel margin, or approval timelines should revisit those assumptions — the mechanics have caught up to enterprise deal reality. The practical step is enabling your channel partners on CPPO (AWS), MPO (Azure), and MCPO (GCP) if they aren't already transacting through those mechanisms, and confirming your CRM logic reflects the new Azure expiry window. None of this requires a product change — it's a process and enablement update.</p>
+    </div>
+  </div>
+
+  <!-- DEEP DIVE section -->
+  <div class="section-header">
+    <span class="section-label">Deep dive</span>
+  </div>
+
+  <!-- TOPIC A-3: Committed spend 101 -->
+  <div class="topic" id="sample-apr-committed-spend-101">
+    <div class="topic-eyebrow">
+      <span class="topic-num">03</span>
+      <span class="tag-pill aws">AWS</span>
+      <span class="tag-pill azure">Azure</span>
+      <span class="tag-pill gcp">GCP</span>
+      <span class="badge badge--edu">Deep dive</span>
+    </div>
+    <h2 class="topic-title">What Is Committed Spend — and Why It's Your Most Underused Closing Tool</h2>
+    <p class="topic-subtitle">EDP, MACC, and GCP committed spend, explained for sales teams</p>
+    <p class="topic-intro">An enterprise buyer tells you they love your product but needs another quarter to get budget approved. What they may not have mentioned: they have $8M in AWS committed spend they're behind on drawing down. If your product is on AWS Marketplace, that budget problem changes entirely — their procurement team has a financial incentive to buy on-marketplace that bypasses the usual approval cycle. This is committed spend, and it's the most underused closing tool available to marketplace ISVs.</p>
+
+    <div class="hs-sections">
+      <div class="hs-section hs-aws">
+        <div class="hs-head">
+          <span class="hs-badge aws">AWS</span>
+          <h3 class="hs-headline">EDP: Enterprise Discount Program</h3>
+        </div>
+        <p class="hs-body">AWS's Enterprise Discount Program (EDP) is a multi-year contract where enterprises commit to a minimum annual AWS spend in exchange for discounted cloud rates. Software purchased through AWS Marketplace counts toward the customer's EDP drawdown target — meaning marketplace transactions help buyers hit their commitment without additional infrastructure spend. For ISVs, EDP-eligible buyers have a financial incentive to buy on-marketplace that exists independent of your deal terms. The qualifying question to work into every enterprise discovery call: "Do you have an AWS EDP, and are you on track to draw it down?" A buyer behind on drawdown has urgency that your price negotiation doesn't create.</p>
+        <a href="https://docs.aws.amazon.com/marketplace/latest/userguide/what-is-marketplace.html" class="hs-source" target="_blank" rel="noopener">AWS Marketplace — What Is It?</a>
+      </div>
+
+      <div class="hs-section hs-azure">
+        <div class="hs-head">
+          <span class="hs-badge azure">Azure</span>
+          <h3 class="hs-headline">MACC: Microsoft Azure Consumption Commitments</h3>
+        </div>
+        <p class="hs-body">Microsoft Azure Consumption Commitments (MACC) works similarly: enterprise customers commit to minimum Azure spend, and purchases through Azure Marketplace reduce their MACC balance. The key constraint is ISV eligibility — only ISVs with Azure IP Co-sell Incentivized status can qualify for MACC drawdown. If your product isn't MACC-eligible, you can't use the buyer's committed spend as a closing lever, and a competitor who is MACC-eligible has a structural advantage in any account where the buyer has unspent balance. Check Partner Center for your current co-sell status — the gap between Eligible and Incentivized is the most common stall point for Azure ISVs.</p>
+        <a href="https://learn.microsoft.com/en-us/partner-center/marketplace-offers/azure-consumption-commitment-enrollment" class="hs-source" target="_blank" rel="noopener">Azure Consumption Commitment Enrollment</a>
+      </div>
+
+      <div class="hs-section hs-gcp">
+        <div class="hs-head">
+          <span class="hs-badge gcp">GCP</span>
+          <h3 class="hs-headline">GCP Committed Spend: 100% Drawdown Through MCPO Since June 2025</h3>
+        </div>
+        <p class="hs-body">GCP's committed spend program lets customers apply GCP Marketplace purchases against their committed spend obligations, up to a 25% cap. Since June 2025, qualifying MCPO channel purchases count toward drawdown at 100% — the same rate as direct purchases — making channel deals as commitment-friendly as direct ones. GCP's committed spend pool is smaller in absolute terms than AWS EDP or Azure MACC, but it's growing alongside GCP's AI infrastructure adoption, which is driving larger enterprise GCP commits as AI workload spend increases. For every enterprise prospect with GCP committed spend, ask your channel team whether the deal qualifies for MCPO before structuring it as a direct offer.</p>
+        <a href="https://cloud.google.com/marketplace/docs/partners/integrated-saas/listing-saas" class="hs-source" target="_blank" rel="noopener">GCP Marketplace SaaS Listing Guide</a>
+      </div>
+    </div>
+
+    <div class="implications">
+      <div class="implications-label">What this means for you</div>
+      <p class="implications-body">The committed spend question is simple enough to work into any discovery call: "Are you working toward a cloud commitment with AWS, Azure, or GCP?" The answer tells you whether you're selling against a budget constraint or alongside a financial incentive that's independent of your deal terms. ISVs who build this into their qualification process consistently find that enterprise buyers with committed spend have shorter sales cycles on-marketplace — because the purchase maps to something the buyer already needs to do. If your sales team isn't asking this question on every enterprise call, that changes this week.</p>
+    </div>
+  </div>
+</div><!-- /edition April 2026 -->
+
+
+<!-- ═══════════════════════════════════════════════════════════════════ -->
+<!-- MAY 2026 — ISSUE 05                                               -->
+<!-- ═══════════════════════════════════════════════════════════════════ -->
+
+<div class="edition">
+  <div class="edition-header">
+    <div class="edition-eyebrow">Issue 05 · May 2026 — Sample Edition</div>
+    <h1 class="edition-title">Sample — AI Agent Listings Are Getting Competitive, Fees Changed, and Co-Sell Is Not What You Think</h1>
+    <p class="edition-desc">One month after GCP's Agent Marketplace launch, the AI agent category is already crowded. Plus: three fee structure changes that affect your net revenue, and what co-sell readiness actually requires.</p>
+  </div>
+
+  <!-- WHAT'S NEW section -->
+  <div class="section-header">
+    <span class="section-label">What's new</span>
+    <span class="section-date">May 2026</span>
+  </div>
+
+  <!-- TOPIC M-1: AI listings surge — FEATURED -->
+  <div class="topic topic--featured" id="sample-may-ai-listings-surge">
+    <div class="topic-eyebrow">
+      <span class="topic-num">01</span>
+      <span class="tag-pill aws">AWS</span>
+      <span class="tag-pill azure">Azure</span>
+      <span class="tag-pill gcp">GCP</span>
+      <span class="badge badge--news">What's new · May 2026</span>
+    </div>
+    <h2 class="topic-title">AI Agent Listings Are Proliferating — and Differentiation Is Already Getting Harder</h2>
+    <p class="topic-subtitle">30 days after GCP's Agent Marketplace launch, early signals on what converts and what doesn't</p>
+    <p class="topic-intro">One month into GCP's Agent Marketplace being live, and two years into Bedrock and Azure AI Foundry being the primary AWS and Azure AI listing surfaces, the AI agent category has shifted from early-mover advantage to how-do-you-stand-out. More ISVs are listing AI-adjacent products across all three clouds simultaneously, and the patterns of what attracts enterprise buyer engagement are starting to emerge.</p>
+
+    <div class="hs-sections">
+      <div class="hs-section hs-aws">
+        <div class="hs-head">
+          <span class="hs-badge aws">AWS</span>
+          <h3 class="hs-headline">Bedrock ISV Co-Sell Prioritization Is Now AI-First</h3>
+        </div>
+        <p class="hs-body">AWS Bedrock-integrated ISV listings have grown steadily since multi-agent collaboration went GA in March 2025, and ISV Accelerate co-sell teams in Q1–Q2 2026 are reporting a higher proportion of AI-related ACE opportunities in their active pipeline. The pattern that's emerging: enterprise buyers aren't searching for "AI agents" generically — they're searching for agents that solve a specific workflow problem: sales intelligence, data pipeline monitoring, compliance review. Listings that name a specific enterprise use case in the title and first paragraph convert better in co-sell conversations than listings that lead with model compatibility or general AI capability. Review your AWS Marketplace listing title and description for specificity before your next ACE opportunity submission.</p>
+        <a href="https://aws.amazon.com/partners/programs/isv-accelerate/" class="hs-source" target="_blank" rel="noopener">AWS ISV Accelerate Program</a>
+      </div>
+
+      <div class="hs-section hs-azure">
+        <div class="hs-head">
+          <span class="hs-badge azure">Azure</span>
+          <h3 class="hs-headline">Microsoft's AI Campaigns Favor Quantified Workflow Improvements</h3>
+        </div>
+        <p class="hs-body">Microsoft's AI customer activation campaigns are running on Azure Marketplace, and the ISVs getting preferential treatment are those whose Partner Center listings document a measurable enterprise impact — specific time saved, cost reduced, or error rate decreased — not vague AI capability claims. Copilot Studio-integrated products that run inside Teams or SharePoint are performing best in these campaigns, but the differentiator is the quantified outcome, not just the integration. If your Foundry or Copilot Studio listing doesn't include a measurable enterprise impact statement with a number in it, add one before your next Microsoft co-sell review.</p>
+        <a href="https://learn.microsoft.com/en-us/azure/foundry/" class="hs-source" target="_blank" rel="noopener">Microsoft Foundry Documentation</a>
+      </div>
+
+      <div class="hs-section hs-gcp">
+        <div class="hs-head">
+          <span class="hs-badge gcp">GCP</span>
+          <h3 class="hs-headline">Agent Marketplace: Named Workflows Outperform General Capabilities at One Month</h3>
+        </div>
+        <p class="hs-body">GCP's Agent Marketplace is one month old, and early partner feedback from the launch cohort shows agents with named enterprise workflow use cases — finance operations automation, HR onboarding, customer support triage — are seeing stronger initial engagement than agents positioned as general-purpose AI. Google's $750M partner fund is actively prioritizing agents that fit specific Gemini Enterprise buyer journeys over broad AI capabilities, and that prioritization is reflected in which listings appear in Google's co-sell recommendations to field teams. Submit your Agent Marketplace listing with a named enterprise workflow in the title — the generic "AI agent for enterprise" framing is already crowded at the one-month mark.</p>
+        <a href="https://cloud.google.com/blog/topics/google-cloud-next/google-cloud-next-2026-wrap-up" class="hs-source" target="_blank" rel="noopener">Google Cloud Next 2026 Wrap Up</a>
+      </div>
+    </div>
+
+    <div class="implications">
+      <div class="implications-label">What this means for you</div>
+      <p class="implications-body">The window to establish a first-mover position in AI agent listings is not closed, but it's narrowing. The ISVs who will dominate AI agent discovery on all three clouds over the next 12 months are listing now with specific enterprise use cases — not waiting until the product is "more complete." A deployed agent that solves one named workflow for one named buyer persona is more compelling to enterprise buyers and hyperscaler field teams than a broad AI capability platform. Specificity in your listing is the only differentiator that compounds as the category fills; generic positioning gets buried faster as more ISVs enter the category.</p>
+    </div>
+  </div>
+
+  <!-- TOPIC M-2: Fee structures -->
+  <div class="topic" id="sample-may-fee-structures">
+    <div class="topic-eyebrow">
+      <span class="topic-num">02</span>
+      <span class="tag-pill aws">AWS</span>
+      <span class="tag-pill azure">Azure</span>
+      <span class="tag-pill gcp">GCP</span>
+      <span class="badge badge--news">What's new · May 2026</span>
+    </div>
+    <h2 class="topic-title">Three Marketplace Fee Changes That Directly Affect Your Net Revenue</h2>
+    <p class="topic-subtitle">GCP's variable rate, Azure's renewal discount, and AWS's partial disbursements — modeled</p>
+    <p class="topic-intro">Marketplace fee structures across AWS, Azure, and GCP all changed in the past 12 months. None were heavily publicized — but each one directly affects ISV net revenue on marketplace deals. If your deal desk is still modeling fees at pre-2025 rates, your margin calculations are wrong.</p>
+
+    <div class="hs-sections">
+      <div class="hs-section hs-aws">
+        <div class="hs-head">
+          <span class="hs-badge aws">AWS</span>
+          <h3 class="hs-headline">Partial Disbursement Support: Cash Flow Improves on Installment Deals</h3>
+        </div>
+        <p class="hs-body">AWS added partial disbursement support in May 2025: sellers now receive funds proportionally as buyers make partial payments on installment deals, rather than waiting for full invoice settlement. For enterprise deals on net-60 or net-90 payment terms with installment structures, this materially reduces the receivables lag — funds arrive in stages rather than in a single payment after the customer's final installment clears. Model your cash flow projections using partial release timelines, not total invoice settlement dates, especially for deals over $500K with multi-year installment structures where the difference from the old model can reach 60–90 days of working capital.</p>
+        <a href="https://docs.aws.amazon.com/marketplace/latest/userguide/disbursement.html" class="hs-source" target="_blank" rel="noopener">AWS Marketplace Disbursement Docs</a>
+      </div>
+
+      <div class="hs-section hs-azure">
+        <div class="hs-head">
+          <span class="hs-badge azure">Azure</span>
+          <h3 class="hs-headline">Renewal Private Offer Fee at 1.5%: Half the New Transaction Rate</h3>
+        </div>
+        <p class="hs-body">Microsoft's store service fee for Azure Marketplace renewal private offers dropped to 1.5% in 2025 — half the standard 3% rate on new transactions — for the full renewal term. This applies to renewal private offers specifically; new transaction offers remain at 3%. On a $1M annual renewal, the savings versus treating it as a new transaction is $15K in platform fees with no pricing change to the customer. Structure long-term customer agreements as renewal private offers wherever the offer terms allow; this is the highest-leverage fee optimization available on Azure for ISVs with established customer relationships.</p>
+        <a href="https://learn.microsoft.com/en-us/partner-center/marketplace-offers/payout-policy-details" class="hs-source" target="_blank" rel="noopener">Azure Marketplace Payout Schedule</a>
+      </div>
+
+      <div class="hs-section hs-gcp">
+        <div class="hs-head">
+          <span class="hs-badge gcp">GCP</span>
+          <h3 class="hs-headline">Variable Revenue Share: 3% New, 1.5% Renewal, Lower for Channel</h3>
+        </div>
+        <p class="hs-body">Google Cloud's variable revenue share model, effective April 21, 2025, charges 3% on new marketplace transactions and 1.5% on renewals, with further reductions possible for channel shifts and migrations per the Vendor Net Revenue Schedule. The applicable rate is determined per transaction by Google's system — ISVs don't self-select — based on deal type and total contract value. For ISVs with significant renewal and channel volume on GCP, the effective blended rate across their book is materially below 3%. Ask your GCP partner development manager for a Vendor Net Revenue Schedule review if you haven't had that conversation since April 2025.</p>
+        <a href="https://cloud.google.com/terms/marketplace-revenue-share-schedule" class="hs-source" target="_blank" rel="noopener">GCP Vendor Net Revenue Schedule</a>
+      </div>
+    </div>
+
+    <div class="implications">
+      <div class="implications-label">What this means for you</div>
+      <p class="implications-body">Across all three marketplaces, renewal economics are now materially better than new transaction economics. ISVs building their marketplace pricing strategy should model the renewal fee rate as the steady-state cost of their business, not the new transaction rate — because the revenue that matters for long-term margin is the renewal book. Deal desks should add marketplace fee as a named line item in their P&L models, using the applicable rate per deal type, not a single blended estimate. At $10M in annual marketplace renewal volume, the difference between a 3% and a 1.5% effective rate is $150K in margin you're either capturing or leaving on the table.</p>
+    </div>
+  </div>
+
+  <!-- DEEP DIVE section -->
+  <div class="section-header">
+    <span class="section-label">Deep dive</span>
+  </div>
+
+  <!-- TOPIC M-3: Co-sell readiness -->
+  <div class="topic" id="sample-may-cosell-readiness">
+    <div class="topic-eyebrow">
+      <span class="topic-num">03</span>
+      <span class="tag-pill aws">AWS</span>
+      <span class="tag-pill azure">Azure</span>
+      <span class="tag-pill gcp">GCP</span>
+      <span class="badge badge--edu">Deep dive</span>
+    </div>
+    <h2 class="topic-title">What Co-Sell Ready Actually Means — Most ISVs Aren't There</h2>
+    <p class="topic-subtitle">The difference between having a marketplace listing and having a co-sell motion</p>
+    <p class="topic-intro">Your team got the AWS Marketplace listing live six months ago. You checked the Partner Center profile box for Azure. You submitted the GCP Partner Advantage application. And yet the hyperscaler field team isn't engaging your pipeline. The problem is almost always the same: having a listing and being co-sell ready are two different things, and the gap between them is operational, not technical.</p>
+
+    <div class="hs-sections">
+      <div class="hs-section hs-aws">
+        <div class="hs-head">
+          <span class="hs-badge aws">AWS</span>
+          <h3 class="hs-headline">ACE Pipeline Activity Is the Trigger — Not Listing Status</h3>
+        </div>
+        <p class="hs-body">Co-sell readiness on AWS requires APN membership at Select tier or above, an active ACE pipeline with regularly submitted opportunities, Marketplace Transaction Revenue history demonstrating you close deals on-marketplace — and ideally a Foundational Technical Review for the AWS Qualified Software badge. ISV Accelerate program access, which gates access to AWS field seller introductions and funded POC support, requires meeting these prerequisites. The common failure mode: submitting ACE opportunities at launch and going quiet. AWS co-sell engagement is allocated based on current pipeline activity, not historical submissions. Someone on your team needs to own ACE as a weekly process — reviewing pipeline, submitting new opportunities, and closing out won/lost deals — not a quarterly task.</p>
+        <a href="https://docs.aws.amazon.com/partner-central/latest/builder-guide/index.html" class="hs-source" target="_blank" rel="noopener">AWS Partner Central — ACE Program</a>
+      </div>
+
+      <div class="hs-section hs-azure">
+        <div class="hs-head">
+          <span class="hs-badge azure">Azure</span>
+          <h3 class="hs-headline">The Eligible-to-Incentivized Gap Is Where Most ISVs Stall</h3>
+        </div>
+        <p class="hs-body">Azure co-sell readiness follows a specific sequence: publish a transact offer → complete Partner Center profile → hit business KPIs → achieve IP Co-sell Eligible → sustain transaction volume → achieve IP Co-sell Incentivized. MACC eligibility — enabling your customers to draw down Azure committed spend on your product — requires Incentivized status, not just Eligible. Most ISVs stall between Eligible and Incentivized because they're not actively driving marketplace transaction volume, which is the primary KPI Microsoft uses to advance co-sell status. The fix is not technical: it's dedicating someone to Partner Center reporting, referral submission, and deal closure tracking on a weekly cadence. Check your Partner Center dashboard for the specific metric gap between your current status and Incentivized.</p>
+        <a href="https://learn.microsoft.com/en-us/partner-center/co-sell-overview" class="hs-source" target="_blank" rel="noopener">Azure IP Co-sell Requirements</a>
+      </div>
+
+      <div class="hs-section hs-gcp">
+        <div class="hs-head">
+          <span class="hs-badge gcp">GCP</span>
+          <h3 class="hs-headline">GCP Rewards Customer Success Reporting, Not Just Bookings</h3>
+        </div>
+        <p class="hs-body">GCP co-sell engagement is unlocked at Partner status in the Sell track of Partner Advantage, with Premier Partner status adding a dedicated PDM and funded campaigns. Unlike AWS and Azure, GCP measures ISV performance through Customer Success Plans (CSPs) tied to adoption outcomes — quantified customer wins, not just transaction volume. ISVs who report documented customer adoption metrics in their GCP engagement get co-sell prioritization that transact-volume-only reporters don't. The practical gap: GCP Partner Advantage requires an active reporting cadence and documented customer wins; ISVs who don't invest in that process don't get the field engagement that depends on it. If you don't have a quarterly Partner Advantage review scheduled with your GCP PDM, that's the first gap to close.</p>
+        <a href="https://cloud.google.com/partners/" class="hs-source" target="_blank" rel="noopener">Google Cloud Partner Advantage</a>
+      </div>
+    </div>
+
+    <div class="implications">
+      <div class="implications-label">What this means for you</div>
+      <p class="implications-body">Co-sell readiness is an operational discipline, not a configuration state. The ISVs generating real hyperscaler co-sell pipeline have a person who owns ACE, Partner Center, and GCP Partner Advantage as a primary responsibility — not a secondary one shared with three other jobs. If your organization treats co-sell program management as a part-time assignment, you're leaving significant pipeline on the table every quarter. The fix isn't technical: it's headcount allocation and process ownership. A single dedicated co-sell program manager, measured on incremental pipeline driven through hyperscaler co-sell, is one of the highest-ROI hires a mid-stage marketplace ISV can make in 2026.</p>
+    </div>
+  </div>
+</div><!-- /edition May 2026 -->
+
+
+<!-- ═══════════════════════════════════════════════════════════════════ -->
+<!-- GATE 2 REVIEW CHECKLIST                                           -->
+<!-- ═══════════════════════════════════════════════════════════════════ -->
+
+<div style="background:#fff;border-radius:8px;box-shadow:0 1px 4px rgba(0,0,0,.08);padding:32px 40px;margin-bottom:48px;">
+  <h2 style="font-family:Lexend,sans-serif;font-size:16px;font-weight:700;margin:0 0 16px;color:#1a1a2e;">Gate 2 Review Checklist</h2>
+  <p style="font-size:13px;color:#6b7280;margin:0 0 16px;">Complete Gate 1 (thought-process-report-apr-may-2026.md) before reviewing this draft.</p>
+
+  <p style="font-size:13px;font-weight:600;color:#1a1a2e;margin:0 0 8px;">April 2026 draft</p>
+  <ul style="font-size:13px;color:#374151;line-height:1.9;margin:0 0 20px;padding-left:20px;">
+    <li>All news items confirmed within 60-day freshness window</li>
+    <li>No [VERIFY] markers — all claims sourced to linked documentation</li>
+    <li>Sources cited and accessible at the linked URLs</li>
+    <li>Structure matches UX outline: 2 What's New + 1 Deep Dive</li>
+    <li>Voice matches writing guide: direct, no jargon without explanation, no filler words, ends every section with an action</li>
+    <li>Featured topic (A-1, GCP Agent Marketplace) is the right lead story</li>
+  </ul>
+
+  <p style="font-size:13px;font-weight:600;color:#1a1a2e;margin:0 0 8px;">May 2026 draft</p>
+  <ul style="font-size:13px;color:#374151;line-height:1.9;margin:0 0 20px;padding-left:20px;">
+    <li>All news items confirmed within 60-day freshness window</li>
+    <li>No [VERIFY] markers — all claims sourced to linked documentation</li>
+    <li>Sources cited and accessible at the linked URLs</li>
+    <li>Structure matches UX outline: 2 What's New + 1 Deep Dive</li>
+    <li>Voice matches writing guide: direct, no jargon without explanation, no filler words, ends every section with an action</li>
+    <li>Featured topic (M-1, AI listings differentiation) is the right lead story</li>
+  </ul>
+
+  <p style="font-size:13px;font-weight:600;color:#1a1a2e;margin:0 0 8px;">On approval</p>
+  <p style="font-size:13px;color:#374151;margin:0;">Push topic data to <code>suger-newsletters-platform-prototype/data/topics.js</code> and edition entries to <code>data/newsletters.js</code>. This draft file is retained here as the staging record.</p>
+</div>
+
+</body>
+</html>
