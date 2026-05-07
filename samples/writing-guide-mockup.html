@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Suger Intelligence — Writing Guideline</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+:root {
+  --bg: #F4F2EC;
+  --surface: #FAFAF7;
+  --white: #FFFFFF;
+  --ink: #18170F;
+  --ink-2: #46443A;
+  --ink-3: #908E86;
+  --rule: #E2DED4;
+  --accent: #1A40C2;
+  --accent-bg: #EEF2FF;
+  --amber: #92400E;
+  --amber-bg: #FFFBEB;
+  --green: #064E3B;
+  --green-bg: #ECFDF5;
+  --red: #991B1B;
+  --red-bg: #FEF2F2;
+  --purple: #5B21B6;
+  --purple-bg: #F5F3FF;
+  --serif: 'DM Serif Display', Georgia, serif;
+  --sans: 'DM Sans', system-ui, sans-serif;
+  --mono: 'DM Mono', monospace;
+}
+
+body { font-family: var(--sans); background: var(--bg); color: var(--ink); min-height: 100vh; }
+
+/* TOPBAR */
+.topbar {
+  background: var(--ink);
+  color: #fff;
+  padding: 0 1.5rem;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 200;
+}
+.topbar-left { display: flex; align-items: center; gap: 10px; }
+.brand { font-family: var(--serif); font-size: 16px; }
+.badge {
+  font-size: 10px; font-weight: 600; letter-spacing: 0.8px;
+  text-transform: uppercase; background: #3B5BDB;
+  color: #fff; padding: 2px 7px; border-radius: 3px;
+}
+.topbar-right { font-size: 11.5px; color: rgba(255,255,255,0.45); }
+.topbar-right span { color: rgba(255,255,255,0.8); }
+
+/* LAYOUT */
+.layout { display: grid; grid-template-columns: 220px 1fr; min-height: calc(100vh - 48px); }
+
+/* SIDEBAR NAV */
+.sidenav {
+  background: var(--white);
+  border-right: 1px solid var(--rule);
+  padding: 1.5rem 0;
+  position: sticky;
+  top: 48px;
+  height: calc(100vh - 48px);
+  overflow-y: auto;
+}
+.nav-section-label {
+  font-size: 9.5px; font-weight: 700; letter-spacing: 1px;
+  text-transform: uppercase; color: var(--ink-3);
+  padding: 10px 1.25rem 4px;
+}
+.nav-item {
+  display: block; padding: 7px 1.25rem;
+  font-size: 13px; color: var(--ink-2);
+  text-decoration: none; cursor: pointer;
+  border-left: 2px solid transparent;
+  transition: all 0.12s;
+}
+.nav-item:hover { background: var(--bg); color: var(--ink); }
+.nav-item.active {
+  color: var(--accent);
+  border-left-color: var(--accent);
+  background: var(--accent-bg);
+  font-weight: 500;
+}
+.nav-divider { height: 1px; background: var(--rule); margin: 8px 0; }
+
+/* MAIN CONTENT */
+.main { padding: 2.5rem 3rem; max-width: 820px; }
+
+/* SECTIONS */
+.section { display: none; }
+.section.active { display: block; }
+
+/* PAGE HEADER */
+.page-header { margin-bottom: 2rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--rule); }
+.page-eyebrow {
+  font-size: 10.5px; font-weight: 700; letter-spacing: 1px;
+  text-transform: uppercase; color: var(--ink-3); margin-bottom: 6px;
+}
+.page-title { font-family: var(--serif); font-size: 32px; line-height: 1.15; letter-spacing: -0.5px; }
+.page-desc { font-size: 14px; color: var(--ink-2); margin-top: 8px; line-height: 1.6; max-width: 560px; }
+
+/* CALLOUT */
+.callout {
+  border-left: 3px solid var(--accent);
+  background: var(--accent-bg);
+  padding: 1rem 1.25rem;
+  border-radius: 0 6px 6px 0;
+  margin-bottom: 1.5rem;
+}
+.callout.amber { border-left-color: #D97706; background: var(--amber-bg); }
+.callout.green { border-left-color: #059669; background: var(--green-bg); }
+.callout-label { font-size: 10px; font-weight: 700; letter-spacing: 0.8px; text-transform: uppercase; color: var(--accent); margin-bottom: 4px; }
+.callout.amber .callout-label { color: var(--amber); }
+.callout.green .callout-label { color: var(--green); }
+.callout-text { font-size: 13.5px; line-height: 1.6; color: var(--ink-2); }
+.callout-text strong { color: var(--ink); font-weight: 500; }
+
+/* RULE BLOCK */
+.rule-list { margin-bottom: 1.5rem; }
+.rule-item {
+  display: flex; gap: 10px; align-items: flex-start;
+  padding: 10px 0; border-bottom: 1px solid var(--rule);
+  font-size: 13.5px; line-height: 1.55; color: var(--ink-2);
+}
+.rule-item:last-child { border-bottom: none; }
+.rule-check {
+  width: 18px; height: 18px; border-radius: 50%;
+  background: var(--green-bg); color: var(--green);
+  font-size: 9px; font-weight: 700; display: flex;
+  align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px;
+}
+.rule-x {
+  width: 18px; height: 18px; border-radius: 50%;
+  background: var(--red-bg); color: var(--red);
+  font-size: 9px; font-weight: 700; display: flex;
+  align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px;
+}
+
+/* HEADING STYLES */
+h2 { font-family: var(--serif); font-size: 22px; letter-spacing: -0.3px; margin: 2rem 0 0.75rem; }
+h3 { font-size: 13px; font-weight: 600; letter-spacing: 0.5px; text-transform: uppercase; color: var(--ink-3); margin: 1.5rem 0 0.5rem; }
+p { font-size: 14px; line-height: 1.7; color: var(--ink-2); margin-bottom: 1rem; }
+
+/* CODE / TEMPLATE */
+.template-block {
+  background: #1E1E1E; color: #D4D4D4;
+  font-family: var(--mono); font-size: 12.5px;
+  line-height: 1.7; padding: 1.25rem 1.5rem;
+  border-radius: 6px; margin: 1rem 0 1.5rem;
+  overflow-x: auto;
+}
+.template-block .c-green { color: #6A9955; }
+.template-block .c-blue { color: #9CDCFE; }
+.template-block .c-yellow { color: #DCDCAA; }
+.template-block .c-orange { color: #CE9178; }
+
+/* EXAMPLE COMPARISON */
+.example-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 1rem 0 1.5rem; }
+.example-card {
+  border-radius: 6px; padding: 1rem 1.1rem; font-size: 13px; line-height: 1.6;
+}
+.example-card.good { background: var(--green-bg); border: 1px solid #A7F3D0; color: var(--green); }
+.example-card.bad { background: var(--red-bg); border: 1px solid #FECACA; color: var(--red); }
+.example-label { font-size: 10px; font-weight: 700; letter-spacing: 0.8px; text-transform: uppercase; margin-bottom: 6px; }
+.example-text { font-size: 13px; line-height: 1.55; }
+
+/* PERSONA TABS */
+.persona-tabs { display: flex; gap: 4px; flex-wrap: wrap; margin-bottom: 1.5rem; border-bottom: 1px solid var(--rule); padding-bottom: 0; }
+.ptab {
+  font-size: 12.5px; padding: 8px 14px; cursor: pointer;
+  border: none; background: none; color: var(--ink-3);
+  border-bottom: 2px solid transparent; font-family: var(--sans);
+  transition: all 0.12s; margin-bottom: -1px;
+}
+.ptab:hover { color: var(--ink); }
+.ptab.active { color: var(--accent); border-bottom-color: var(--accent); font-weight: 500; }
+
+/* PERSONA PANEL */
+.persona-panel { display: none; }
+.persona-panel.active { display: block; }
+
+/* PERSONA CARD */
+.persona-card {
+  background: var(--white); border: 1px solid var(--rule);
+  border-radius: 8px; overflow: hidden; margin-bottom: 1rem;
+}
+.pc-header {
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid var(--rule);
+  display: flex; align-items: center; gap: 12px;
+}
+.pc-icon {
+  width: 36px; height: 36px; border-radius: 6px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 16px;
+}
+.pc-name { font-size: 15px; font-weight: 500; color: var(--ink); }
+.pc-focus { font-size: 12px; color: var(--ink-3); margin-top: 1px; }
+.pc-body { padding: 1.1rem 1.25rem; }
+.pc-section-label { font-size: 10px; font-weight: 700; letter-spacing: 0.8px; text-transform: uppercase; color: var(--ink-3); margin-bottom: 6px; margin-top: 12px; }
+.pc-section-label:first-child { margin-top: 0; }
+.avoid-pill {
+  display: inline-block; font-size: 11.5px; padding: 2px 8px;
+  background: var(--red-bg); color: var(--red);
+  border-radius: 3px; margin: 2px 3px 2px 0;
+}
+.do-pill {
+  display: inline-block; font-size: 11.5px; padding: 2px 8px;
+  background: var(--green-bg); color: var(--green);
+  border-radius: 3px; margin: 2px 3px 2px 0;
+}
+
+/* EXAMPLE STRIP */
+.example-strip {
+  background: var(--surface); border-top: 1px solid var(--rule);
+  padding: 1rem 1.25rem;
+}
+.example-strip-label { font-size: 10px; font-weight: 700; letter-spacing: 0.8px; text-transform: uppercase; color: var(--ink-3); margin-bottom: 8px; }
+.example-strip-topic { font-size: 11.5px; color: var(--ink-3); margin-bottom: 4px; }
+.example-strip-text { font-size: 13px; line-height: 1.6; color: var(--ink-2); font-style: italic; }
+.example-strip-text em { font-style: normal; color: var(--ink); font-weight: 500; }
+
+/* TAG TABLE */
+.tag-table { width: 100%; border-collapse: collapse; font-size: 13px; margin: 1rem 0 1.5rem; }
+.tag-table th { text-align: left; font-size: 10.5px; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase; color: var(--ink-3); padding: 8px 12px; background: var(--bg); border-bottom: 1px solid var(--rule); }
+.tag-table td { padding: 9px 12px; border-bottom: 1px solid var(--rule); vertical-align: top; color: var(--ink-2); }
+.tag-table tr:last-child td { border-bottom: none; }
+.tag-pill { display: inline-block; font-family: var(--mono); font-size: 11px; padding: 2px 7px; background: var(--bg); border: 1px solid var(--rule); border-radius: 3px; margin: 2px 3px 2px 0; color: var(--ink); }
+
+/* CHECKLIST */
+.checklist { margin: 1rem 0; }
+.check-item { display: flex; align-items: flex-start; gap: 10px; padding: 9px 0; border-bottom: 1px solid var(--rule); font-size: 13.5px; color: var(--ink-2); line-height: 1.5; }
+.check-item:last-child { border-bottom: none; }
+.check-box { width: 16px; height: 16px; border: 1.5px solid var(--rule); border-radius: 3px; flex-shrink: 0; margin-top: 2px; }
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-left">
+    <span class="brand">Suger Intelligence</span>
+    <span class="badge">Writing Guide</span>
+  </div>
+  <div class="topbar-right">Internal · <span>For Claude Code agents &amp; content team</span></div>
+</header>
+
+<div class="layout">
+
+  <!-- SIDENAV -->
+  <nav class="sidenav">
+    <div class="nav-section-label">Overview</div>
+    <div class="nav-item active" onclick="showSection('overview', this)">The one rule</div>
+    <div class="nav-item" onclick="showSection('tone', this)">Tone &amp; voice</div>
+
+    <div class="nav-divider"></div>
+    <div class="nav-section-label">Content types</div>
+    <div class="nav-item" onclick="showSection('what-changed', this)">What Changed</div>
+    <div class="nav-item" onclick="showSection('deep-dive', this)">Deep Dive</div>
+    <div class="nav-item" onclick="showSection('market-pulse', this)">Market Pulse</div>
+    <div class="nav-item" onclick="showSection('news', this)">Latest News</div>
+
+    <div class="nav-divider"></div>
+    <div class="nav-section-label">Personas</div>
+    <div class="nav-item" onclick="showSection('personas', this)">All personas</div>
+
+    <div class="nav-divider"></div>
+    <div class="nav-section-label">Reference</div>
+    <div class="nav-item" onclick="showSection('tagging', this)">Tagging rules</div>
+    <div class="nav-item" onclick="showSection('checklist', this)">Quality checklist</div>
+  </nav>
+
+  <!-- MAIN -->
+  <main class="main">
+
+    <!-- OVERVIEW -->
+    <div class="section active" id="section-overview">
+      <div class="page-header">
+        <div class="page-eyebrow">Suger Intelligence · Writing Guideline v1</div>
+        <h1 class="page-title">The one rule that<br><em>overrides everything else</em></h1>
+        <p class="page-desc">This guide is used by AI agents and the content team when generating newsletter content. Every section here is a directive — not a suggestion.</p>
+      </div>
+
+      <div class="callout">
+        <div class="callout-label">Core principle</div>
+        <div class="callout-text"><strong>Never describe what something is without telling the reader what to do with that information.</strong> Every article, update, or section must answer the reader's implicit question: "Why does this matter to me, and what should I do next?"</div>
+      </div>
+
+      <h2>Why this exists</h2>
+      <p>Suger's readers are busy. They have global purview across multiple clouds, multiple teams, and multiple priorities. They don't have time to read an update and figure out on their own why it matters to them. That work is ours to do — not theirs.</p>
+      <p>The goal of every piece of content is to make the reader feel like someone who actually understands their job filtered this information specifically for them.</p>
+
+      <h2>What this is not</h2>
+      <div class="rule-list">
+        <div class="rule-item"><div class="rule-x">✕</div>A recap of hyperscaler press releases</div>
+        <div class="rule-item"><div class="rule-x">✕</div>A collection of links with brief descriptions</div>
+        <div class="rule-item"><div class="rule-x">✕</div>Content for everyone, personalized for no one</div>
+        <div class="rule-item"><div class="rule-x">✕</div>A blog that publishes whenever something interesting happens</div>
+      </div>
+
+      <h2>What this is</h2>
+      <div class="rule-list">
+        <div class="rule-item"><div class="rule-check">✓</div>A weekly intelligence briefing that tells each reader exactly what changed, what it means for their role, and what to do next</div>
+        <div class="rule-item"><div class="rule-check">✓</div>A living curriculum that helps readers advance along the marketplace maturity curve</div>
+        <div class="rule-item"><div class="rule-check">✓</div>A scaled CS tool — the thing that answers questions before customers have to ask them</div>
+      </div>
+    </div>
+
+    <!-- TONE -->
+    <div class="section" id="section-tone">
+      <div class="page-header">
+        <div class="page-eyebrow">Voice &amp; style</div>
+        <h1 class="page-title">Tone &amp; voice</h1>
+      </div>
+
+      <h3>The four principles</h3>
+      <div class="rule-list">
+        <div class="rule-item"><div class="rule-check">✓</div><div><strong style="color:var(--ink)">Professional but plain.</strong> Write like a smart colleague explaining something over Slack, not a press release.</div></div>
+        <div class="rule-item"><div class="rule-check">✓</div><div><strong style="color:var(--ink)">Direct.</strong> Lead with the most important thing. Don't bury the point in context.</div></div>
+        <div class="rule-item"><div class="rule-check">✓</div><div><strong style="color:var(--ink)">Grounded.</strong> No hype. No filler words. Use concrete numbers and specifics instead of adjectives.</div></div>
+        <div class="rule-item"><div class="rule-check">✓</div><div><strong style="color:var(--ink)">Empathetic.</strong> Assume the reader is busy, has global coverage, and is not an expert in everything.</div></div>
+      </div>
+
+      <h3>Words to remove on sight</h3>
+      <div style="margin-bottom:1.5rem">
+        <span class="avoid-pill">exciting</span><span class="avoid-pill">robust</span><span class="avoid-pill">game-changing</span><span class="avoid-pill">transformative</span><span class="avoid-pill">seamlessly</span><span class="avoid-pill">cutting-edge</span><span class="avoid-pill">powerful</span><span class="avoid-pill">innovative</span><span class="avoid-pill">leverage</span><span class="avoid-pill">utilize</span><span class="avoid-pill">deep dive</span><span class="avoid-pill">in today's landscape</span>
+      </div>
+
+      <h3>Patterns to avoid</h3>
+      <div class="rule-list">
+        <div class="rule-item"><div class="rule-x">✕</div>Opening with "This article will cover..." or "In this piece, we explore..."</div>
+        <div class="rule-item"><div class="rule-x">✕</div>Describing a feature without explaining its impact on the reader</div>
+        <div class="rule-item"><div class="rule-x">✕</div>Passive voice — say who did what</div>
+        <div class="rule-item"><div class="rule-x">✕</div>Jargon on first use without a plain-language explanation</div>
+        <div class="rule-item"><div class="rule-x">✕</div>Generic intros that could apply to any article</div>
+      </div>
+    </div>
+
+    <!-- WHAT CHANGED -->
+    <div class="section" id="section-what-changed">
+      <div class="page-header">
+        <div class="page-eyebrow">Content type</div>
+        <h1 class="page-title">What Changed</h1>
+        <p class="page-desc">The recency section. Confirmed updates from AWS, Azure, and GCP that affect how users operate on marketplace.</p>
+      </div>
+
+      <div class="callout amber">
+        <div class="callout-label">⚡ Recency rule</div>
+        <div class="callout-text">Only include <strong>confirmed changes</strong> with a source and date. Never speculation. If it can't be cited, it doesn't go here.</div>
+      </div>
+
+      <h3>Rules</h3>
+      <div class="rule-list">
+        <div class="rule-item"><div class="rule-check">✓</div>Lead with the cloud provider and what changed in the first sentence</div>
+        <div class="rule-item"><div class="rule-check">✓</div>Second sentence: what this means operationally for the reader</div>
+        <div class="rule-item"><div class="rule-check">✓</div>Maximum 3 sentences per item</div>
+        <div class="rule-item"><div class="rule-check">✓</div>Always include source and date</div>
+      </div>
+
+      <h3>Template</h3>
+      <div class="template-block">
+<span class="c-green">// Sentence 1: who did what</span>
+<span class="c-blue">[Cloud Provider]</span> <span class="c-yellow">[changed / launched / updated]</span> <span class="c-blue">[specific thing]</span>.
+
+<span class="c-green">// Sentence 2: operational impact</span>
+This means <span class="c-orange">[what the reader can now do / no longer has to do / needs to check]</span>.
+
+<span class="c-green">// Sentence 3 (optional): next action</span>
+<span class="c-orange">[What to do next, or what to watch for.]</span>
+      </div>
+
+      <h3>Good vs bad</h3>
+      <div class="example-grid">
+        <div class="example-card good">
+          <div class="example-label">✓ Good</div>
+          <div class="example-text">AWS Marketplace launched Resale Authorization for EMEA. Channel partners can now resell ISV listings in EU and UK without a separate listing — cutting time to activate a new regional partner from weeks to days.</div>
+        </div>
+        <div class="example-card bad">
+          <div class="example-label">✕ Bad</div>
+          <div class="example-text">AWS has announced exciting new features for their marketplace platform that will enhance the partner ecosystem experience across regions.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DEEP DIVE -->
+    <div class="section" id="section-deep-dive">
+      <div class="page-header">
+        <div class="page-eyebrow">Content type</div>
+        <h1 class="page-title">Deep Dive</h1>
+        <p class="page-desc">The 101–201 curriculum section. Foundational and intermediate concepts that help readers operate more effectively on cloud marketplace.</p>
+      </div>
+
+      <h3>Rules</h3>
+      <div class="rule-list">
+        <div class="rule-item"><div class="rule-check">✓</div>Headline names the concept AND the benefit — not just the topic</div>
+        <div class="rule-item"><div class="rule-check">✓</div>Open with a scenario the reader will recognize</div>
+        <div class="rule-item"><div class="rule-check">✓</div>Explain the concept in plain language, then connect to what the reader should do</div>
+        <div class="rule-item"><div class="rule-check">✓</div>Close with a clear "what you should do" or "what to watch for"</div>
+        <div class="rule-item"><div class="rule-check">✓</div>Target length: 400–600 words</div>
+      </div>
+
+      <h3>Headline formula</h3>
+      <div class="example-grid">
+        <div class="example-card good">
+          <div class="example-label">✓ Good</div>
+          <div class="example-text">"What is a co-sell motion — and why does it matter to your quota?"</div>
+        </div>
+        <div class="example-card bad">
+          <div class="example-label">✕ Bad</div>
+          <div class="example-text">"Introduction to Co-Selling with Hyperscalers"</div>
+        </div>
+      </div>
+
+      <h3>Flow template</h3>
+      <div class="template-block">
+<span class="c-green">// 1. Open with a scenario they'll recognize</span>
+<span class="c-orange">[Situation the reader has been in or will be in]</span>
+
+<span class="c-green">// 2. Name and explain the concept plainly</span>
+<span class="c-orange">[What this is, in plain language. No jargon without explanation.]</span>
+
+<span class="c-green">// 3. Show how it works in practice</span>
+<span class="c-orange">[Concrete example — ideally with a number or timeline]</span>
+
+<span class="c-green">// 4. Tell them what to do with this</span>
+<span class="c-orange">[Clear next action or thing to watch for]</span>
+      </div>
+    </div>
+
+    <!-- MARKET PULSE -->
+    <div class="section" id="section-market-pulse">
+      <div class="page-header">
+        <div class="page-eyebrow">Content type</div>
+        <h1 class="page-title">Market Pulse</h1>
+        <p class="page-desc">One meaningful data point from the broader cloud market, connected back to the reader's work. A fun fact with a point.</p>
+      </div>
+
+      <h3>Rules</h3>
+      <div class="rule-list">
+        <div class="rule-item"><div class="rule-check">✓</div>One stat or finding as the headline</div>
+        <div class="rule-item"><div class="rule-check">✓</div>2–3 sentences of context: what's driving it, where it comes from</div>
+        <div class="rule-item"><div class="rule-check">✓</div>One sentence connecting it directly to the reader's work</div>
+      </div>
+
+      <h3>Template</h3>
+      <div class="template-block">
+<span class="c-green">// Headline: the stat itself</span>
+<span class="c-blue">[Specific number or finding]</span>
+
+<span class="c-green">// Body: context</span>
+<span class="c-orange">[What's driving this. Where the data comes from.]</span>
+
+<span class="c-green">// Closer: so what?</span>
+For <span class="c-blue">[persona]</span>, this means <span class="c-orange">[direct connection to their work]</span>.
+      </div>
+    </div>
+
+    <!-- NEWS -->
+    <div class="section" id="section-news">
+      <div class="page-header">
+        <div class="page-eyebrow">Content type</div>
+        <h1 class="page-title">Latest News</h1>
+        <p class="page-desc">Notable news from hyperscalers, the partner ecosystem, or the cloud market that may affect how readers think about their marketplace strategy.</p>
+      </div>
+
+      <h3>Rules</h3>
+      <div class="rule-list">
+        <div class="rule-item"><div class="rule-check">✓</div>News-style lead: who, what, when</div>
+        <div class="rule-item"><div class="rule-check">✓</div>Second paragraph: what this could mean for the reader — interpretive, not just a summary</div>
+        <div class="rule-item"><div class="rule-check">✓</div>Flag whether this is time-sensitive or something to monitor</div>
+        <div class="rule-item"><div class="rule-x">✕</div>Don't just restate the press release — add a "so what" for the reader</div>
+      </div>
+    </div>
+
+    <!-- PERSONAS -->
+    <div class="section" id="section-personas">
+      <div class="page-header">
+        <div class="page-eyebrow">Persona writing angles</div>
+        <h1 class="page-title">Write for your reader,<br><em>not a generic audience</em></h1>
+        <p class="page-desc">The same update can — and should — be written differently for each persona. Select a persona below to see their priorities, what to avoid, and a writing example.</p>
+      </div>
+
+      <div class="persona-tabs">
+        <button class="ptab active" onclick="showPersona('partnerships', this)">Partnerships &amp; Alliances</button>
+        <button class="ptab" onclick="showPersona('sales', this)">Sales (AEs)</button>
+        <button class="ptab" onclick="showPersona('finance', this)">Finance &amp; Deal Desk</button>
+        <button class="ptab" onclick="showPersona('salesops', this)">Sales Operations</button>
+        <button class="ptab" onclick="showPersona('biztech', this)">Biz Tech &amp; Admins</button>
+      </div>
+
+      <!-- PARTNERSHIPS -->
+      <div class="persona-panel active" id="persona-partnerships">
+        <div class="persona-card">
+          <div class="pc-header">
+            <div class="pc-icon" style="background:#EEF2FF">🤝</div>
+            <div>
+              <div class="pc-name">Partnerships &amp; Alliances</div>
+              <div class="pc-focus">Co-sell velocity · Partner attach rate · Indirect revenue</div>
+            </div>
+          </div>
+          <div class="pc-body">
+            <div class="pc-section-label">What they care about</div>
+            <p style="margin:0 0 10px;font-size:13.5px">Making co-sell motions work without manual chaos. They care about partner attach rate, indirect revenue, and opportunity sharing. If something makes activating a new partner faster, they want to know.</p>
+            <div class="pc-section-label">Frame content around</div>
+            <div><span class="do-pill">co-sell motion</span><span class="do-pill">partner attach</span><span class="do-pill">opportunity sharing</span><span class="do-pill">activation timelines</span><span class="do-pill">pipeline impact</span></div>
+            <div class="pc-section-label" style="margin-top:12px">Avoid</div>
+            <div><span class="avoid-pill">Finance-heavy language</span><span class="avoid-pill">CRM admin detail</span><span class="avoid-pill">quota-focused framing</span></div>
+          </div>
+          <div class="example-strip">
+            <div class="example-strip-label">Example — AWS EMEA Resale Authorization launch</div>
+            <div class="example-strip-topic">Topic: AWS now allows channel partners to resell in EMEA without a separate listing</div>
+            <div class="example-strip-text">Your channel partners in EU and UK can now resell your listing without you setting up a <em>separate listing per country</em>. That removes one of the most common blockers when activating new regional partners — <em>fewer setup calls, faster time to first deal.</em></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SALES -->
+      <div class="persona-panel" id="persona-sales">
+        <div class="persona-card">
+          <div class="pc-header">
+            <div class="pc-icon" style="background:#FFFBEB">💼</div>
+            <div>
+              <div class="pc-name">Sales (Account Executives)</div>
+              <div class="pc-focus">Close speed · Committed cloud spend · Zero added friction</div>
+            </div>
+          </div>
+          <div class="pc-body">
+            <div class="pc-section-label">What they care about</div>
+            <p style="margin:0 0 10px;font-size:13.5px">Closing deals without learning new tools. They want to use buyer's committed cloud spend to unlock budget. If something makes a deal move faster or unblocks an approval, they need it in one sentence.</p>
+            <div class="pc-section-label">Frame content around</div>
+            <div><span class="do-pill">deal velocity</span><span class="do-pill">committed spend</span><span class="do-pill">unblocking approvals</span><span class="do-pill">CRM-native actions</span></div>
+            <div class="pc-section-label" style="margin-top:12px">Avoid</div>
+            <div><span class="avoid-pill">Policy-heavy language</span><span class="avoid-pill">Partnership strategy framing</span><span class="avoid-pill">Anything that sounds like overhead</span></div>
+          </div>
+          <div class="example-strip">
+            <div class="example-strip-label">Example — Azure private offer expiry extended to 30 days</div>
+            <div class="example-strip-topic">Topic: Azure extended private offer expiry window from 14 to 30 days</div>
+            <div class="example-strip-text">If you've had buyers let offers expire because <em>14 days wasn't enough time for internal approvals</em>, Azure just fixed that. The expiry window is now 30 days. Set your offer timelines accordingly and <em>stop losing deals to clock-outs.</em></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- FINANCE -->
+      <div class="persona-panel" id="persona-finance">
+        <div class="persona-card">
+          <div class="pc-header">
+            <div class="pc-icon" style="background:#ECFDF5">📊</div>
+            <div>
+              <div class="pc-name">Finance &amp; Deal Desk</div>
+              <div class="pc-focus">Revenue recognition · Quote-to-cash · Reconciliation</div>
+            </div>
+          </div>
+          <div class="pc-body">
+            <div class="pc-section-label">What they care about</div>
+            <p style="margin:0 0 10px;font-size:13.5px">Knowing exactly when and how money moves. They need clean quote-to-cash, accurate invoicing, and audit-ready reconciliation. Vague language loses them immediately — always use exact numbers and timelines.</p>
+            <div class="pc-section-label">Frame content around</div>
+            <div><span class="do-pill">exact fees & rates</span><span class="do-pill">disbursement timelines</span><span class="do-pill">RevRec implications</span><span class="do-pill">ERP/CRM workflow</span></div>
+            <div class="pc-section-label" style="margin-top:12px">Avoid</div>
+            <div><span class="avoid-pill">Co-sell strategy language</span><span class="avoid-pill">Vague "streamlining" claims</span><span class="avoid-pill">Anything without a number</span></div>
+          </div>
+          <div class="example-strip">
+            <div class="example-strip-label">Example — GCP listing fee confirmed unchanged</div>
+            <div class="example-strip-topic">Topic: GCP transaction fee stays at 3% for Q2 2026</div>
+            <div class="example-strip-text">GCP's <em>3% transaction fee holds for Q2 2026</em>. If you're building revenue recognition models or deal desk pricing for GCP deals this quarter, <em>no rate adjustments needed</em>. Disbursement timelines remain on the standard 30-day cycle.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SALES OPS -->
+      <div class="persona-panel" id="persona-salesops">
+        <div class="persona-card">
+          <div class="pc-header">
+            <div class="pc-icon" style="background:#F5F3FF">⚙️</div>
+            <div>
+              <div class="pc-name">Sales Operations</div>
+              <div class="pc-focus">Process consistency · CRM hygiene · Approval workflows</div>
+            </div>
+          </div>
+          <div class="pc-body">
+            <div class="pc-section-label">What they care about</div>
+            <p style="margin:0 0 10px;font-size:13.5px">Making sure systems align and processes don't sprawl. Any marketplace change that touches approvals, routing, or CRM configuration is their concern. Frame everything as a process or system implication.</p>
+            <div class="pc-section-label">Frame content around</div>
+            <div><span class="do-pill">process implication</span><span class="do-pill">CRM configuration</span><span class="do-pill">approval flow impact</span><span class="do-pill">downstream data</span></div>
+            <div class="pc-section-label" style="margin-top:12px">Avoid</div>
+            <div><span class="avoid-pill">Sales quota language</span><span class="avoid-pill">Strategic framing</span><span class="avoid-pill">Anything without a process implication</span></div>
+          </div>
+          <div class="example-strip">
+            <div class="example-strip-label">Example — Azure private offer expiry extended to 30 days</div>
+            <div class="example-strip-topic">Topic: Azure extended private offer expiry window from 14 to 30 days</div>
+            <div class="example-strip-text">Azure's new 30-day offer expiry default gives your approval workflows more runway. <em>Check any automated expiry alerts, CRM field logic, or notification rules tied to the old 14-day window</em> — those may need to be updated to avoid false triggers.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- BIZ TECH -->
+      <div class="persona-panel" id="persona-biztech">
+        <div class="persona-card">
+          <div class="pc-header">
+            <div class="pc-icon" style="background:#FEF2F2">🔧</div>
+            <div>
+              <div class="pc-name">Biz Tech &amp; CRM Admins</div>
+              <div class="pc-focus">Integration stability · System architecture · No technical debt</div>
+            </div>
+          </div>
+          <div class="pc-body">
+            <div class="pc-section-label">What they care about</div>
+            <p style="margin:0 0 10px;font-size:13.5px">Not inheriting someone else's mess. They care about whether a marketplace change requires a configuration update on their end, breaks an integration, or introduces new fields and flows that clutter the existing setup.</p>
+            <div class="pc-section-label">Frame content around</div>
+            <div><span class="do-pill">system-level change</span><span class="do-pill">integration implications</span><span class="do-pill">config action required</span><span class="do-pill">field logic review</span></div>
+            <div class="pc-section-label" style="margin-top:12px">Avoid</div>
+            <div><span class="avoid-pill">Sales strategy language</span><span class="avoid-pill">Revenue framing</span><span class="avoid-pill">Anything without a system implication</span></div>
+          </div>
+          <div class="example-strip">
+            <div class="example-strip-label">Example — Azure private offer expiry extended to 30 days</div>
+            <div class="example-strip-topic">Topic: Azure extended private offer expiry window from 14 to 30 days</div>
+            <div class="example-strip-text">Azure's offer expiry default changed from <em>14 to 30 days</em>. If you have automation or field logic in your CRM tied to offer expiry dates — triggers, alerts, stage transitions — <em>verify those rules still fire correctly</em> under the new window.</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- TAGGING -->
+    <div class="section" id="section-tagging">
+      <div class="page-header">
+        <div class="page-eyebrow">Reference</div>
+        <h1 class="page-title">Tagging rules</h1>
+        <p class="page-desc">Every piece of content must be tagged before publishing. These tags are used by the agent to filter and route content to the correct persona feed.</p>
+      </div>
+
+      <table class="tag-table">
+        <thead>
+          <tr>
+            <th>Tag</th>
+            <th>Allowed values</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code style="font-family:var(--mono);font-size:12px">content_type</code></td>
+            <td><span class="tag-pill">what-changed</span><span class="tag-pill">deep-dive</span><span class="tag-pill">market-pulse</span><span class="tag-pill">news</span></td>
+          </tr>
+          <tr>
+            <td><code style="font-family:var(--mono);font-size:12px">maturity_level</code></td>
+            <td><span class="tag-pill">incubation</span><span class="tag-pill">101</span><span class="tag-pill">201</span><span class="tag-pill">301</span></td>
+          </tr>
+          <tr>
+            <td><code style="font-family:var(--mono);font-size:12px">primary_persona</code></td>
+            <td><span class="tag-pill">partnerships</span><span class="tag-pill">sales</span><span class="tag-pill">finance</span><span class="tag-pill">sales-ops</span><span class="tag-pill">biz-tech</span></td>
+          </tr>
+          <tr>
+            <td><code style="font-family:var(--mono);font-size:12px">cloud</code></td>
+            <td><span class="tag-pill">aws</span><span class="tag-pill">azure</span><span class="tag-pill">gcp</span><span class="tag-pill">multi-cloud</span><span class="tag-pill">general</span></td>
+          </tr>
+          <tr>
+            <td><code style="font-family:var(--mono);font-size:12px">recency_flag</code></td>
+            <td><span class="tag-pill">time-sensitive</span><span class="tag-pill">evergreen</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- CHECKLIST -->
+    <div class="section" id="section-checklist">
+      <div class="page-header">
+        <div class="page-eyebrow">Reference</div>
+        <h1 class="page-title">Quality checklist</h1>
+        <p class="page-desc">Run every piece of content through this before it's finalized. The agent should use this as a self-review step after generating a draft.</p>
+      </div>
+
+      <div class="callout green">
+        <div class="callout-label">Agent instruction</div>
+        <div class="callout-text">After generating any draft, re-read the content and verify each item below. If any item fails, revise before returning the output.</div>
+      </div>
+
+      <div class="checklist">
+        <div class="check-item"><div class="check-box"></div>Does the headline name both the topic and the benefit?</div>
+        <div class="check-item"><div class="check-box"></div>Does the first sentence lead with the most important thing?</div>
+        <div class="check-item"><div class="check-box"></div>Is there a clear "so what" — not just a description of what happened?</div>
+        <div class="check-item"><div class="check-box"></div>Is the content framed for the tagged persona, not a generic reader?</div>
+        <div class="check-item"><div class="check-box"></div>Are all claims in "What Changed" sourced and confirmed (no speculation)?</div>
+        <div class="check-item"><div class="check-box"></div>Is the length appropriate for the content type?</div>
+        <div class="check-item"><div class="check-box"></div>Has all jargon been explained on first use?</div>
+        <div class="check-item"><div class="check-box"></div>Have filler words (exciting, robust, game-changing) been removed?</div>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<script>
+function showSection(id, el) {
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+  document.getElementById('section-' + id).classList.add('active');
+  el.classList.add('active');
+}
+function showPersona(id, el) {
+  document.querySelectorAll('.persona-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.ptab').forEach(t => t.classList.remove('active'));
+  document.getElementById('persona-' + id).classList.add('active');
+  el.classList.add('active');
+}
+</script>
+</body>
+</html>

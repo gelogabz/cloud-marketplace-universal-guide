@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Suger Cube — Pipeline Run Report #19</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lexend:wght@600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; }
+    a { color: #ae530f; }
+  </style>
+</head>
+<body style="margin:0;padding:0;background:#f0f0ee;font-family:Inter,Arial,sans-serif;color:#111111;">
+
+<div style="max-width:660px;margin:0 auto;padding:32px 16px;">
+
+  <!-- ── MASTHEAD ── -->
+  <div style="background:#1a1a2e;border-radius:12px 12px 0 0;padding:28px 36px;margin-bottom:0;">
+    <div style="display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;">
+      <span style="font-family:Lexend,sans-serif;font-size:22px;font-weight:800;color:#ffffff;letter-spacing:-0.02em;">Suger Cube</span>
+      <span style="width:1px;height:16px;background:#3a3a5a;display:inline-block;vertical-align:middle;"></span>
+      <span style="font-size:12px;font-weight:600;color:#767676;letter-spacing:0.04em;text-transform:uppercase;">Pipeline Run Report</span>
+    </div>
+  </div>
+
+  <!-- ── RUN METADATA ── -->
+  <div style="background:#ffffff;border:1px solid #ebebeb;border-top:none;border-radius:0 0 0 0;padding:24px 36px;border-bottom:3px solid #f26a1c;">
+    <div style="display:flex;flex-wrap:wrap;gap:24px;align-items:flex-start;">
+      <div>
+        <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:#767676;margin-bottom:4px;">Run</div>
+        <div style="font-size:15px;font-weight:700;color:#111;">#19</div>
+      </div>
+      <div>
+        <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:#767676;margin-bottom:4px;">Trigger</div>
+        <div style="font-size:15px;font-weight:700;color:#111;">Weekly schedule</div>
+      </div>
+      <div>
+        <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:#767676;margin-bottom:4px;">Run date</div>
+        <div style="font-size:15px;font-weight:700;color:#111;">Mon May 5, 2026 — 09:00 UTC</div>
+      </div>
+      <div>
+        <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:#767676;margin-bottom:4px;">Coverage</div>
+        <div style="font-size:15px;font-weight:700;color:#111;">Apr 28 – May 4, 2026</div>
+      </div>
+      <div>
+        <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:#767676;margin-bottom:4px;">Wall time</div>
+        <div style="font-size:15px;font-weight:700;color:#111;">52 min</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── SUMMARY ROW ── -->
+  <div style="background:#1a1a2e;border-radius:0;padding:16px 36px;display:flex;flex-wrap:wrap;gap:28px;">
+    <div style="text-align:center;">
+      <div style="font-size:28px;font-weight:800;font-family:Lexend,sans-serif;color:#ffffff;">9</div>
+      <div style="font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:0.1em;color:#767676;margin-top:2px;">Discovered</div>
+    </div>
+    <div style="text-align:center;">
+      <div style="font-size:28px;font-weight:800;font-family:Lexend,sans-serif;color:#ffffff;">8</div>
+      <div style="font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:0.1em;color:#767676;margin-top:2px;">After diff</div>
+    </div>
+    <div style="text-align:center;">
+      <div style="font-size:28px;font-weight:800;font-family:Lexend,sans-serif;color:#f26a1c;">5</div>
+      <div style="font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:0.1em;color:#767676;margin-top:2px;">→ Newsletter</div>
+    </div>
+    <div style="text-align:center;">
+      <div style="font-size:28px;font-weight:800;font-family:Lexend,sans-serif;color:#60a5fa;">3</div>
+      <div style="font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:0.1em;color:#767676;margin-top:2px;">→ Guide update</div>
+    </div>
+    <div style="text-align:center;">
+      <div style="font-size:28px;font-weight:800;font-family:Lexend,sans-serif;color:#767676;">0</div>
+      <div style="font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:0.1em;color:#767676;margin-top:2px;">Discarded</div>
+    </div>
+  </div>
+
+  <div style="height:24px;"></div>
+
+  <!-- ══════════════════════════════════════
+       LAYER 1 — DISCOVERY
+  ══════════════════════════════════════ -->
+  <div style="background:#f26a1c;border-radius:8px 8px 0 0;padding:10px 20px;">
+    <span style="font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:0.14em;color:#ffffff;">Layer 1 — Discovery (parallel, 09:00–09:22 UTC)</span>
+  </div>
+
+  <!-- Agent 1: Marketplace -->
+  <div style="background:#ffffff;border:1px solid #ebebeb;border-top:none;padding:28px 32px;">
+    <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;">
+      <span style="font-family:Lexend,sans-serif;font-size:16px;font-weight:700;color:#111;">Marketplace agent</span>
+      <span style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;background:#f5f5f5;color:#555;border-radius:4px;padding:2px 7px;">09:00–09:18 · 18 min</span>
+    </div>
+    <p style="font-size:13px;color:#555;margin:0 0 16px;line-height:1.7;">Scanned 6 sources · Fetched 72 entries · Applied keyword filters → 7 candidates · Applied disqualifiers → 5 passed</p>
+
+    <!-- Agent reasoning block -->
+    <div style="background:#0f172a;border-radius:8px;padding:18px 22px;margin-bottom:20px;overflow-x:auto;">
+      <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:#4ade80;margin-bottom:10px;">Agent reasoning</div>
+      <pre style="margin:0;font-family:'JetBrains Mono',monospace;font-size:12px;color:#cbd5e1;line-height:1.7;white-space:pre-wrap;">Scanning AWS What's New... 18 entries fetched.
+Keyword scan: "AI agent", "marketplace transaction", "private offer" matched 2 entries.
+Disqualifier check: 0 dropped.
+→ 2 items passed.
+
+Scanning AWS Marketplace Blog... 9 entries fetched.
+Keyword scan: "listing fee", "metered SaaS", "private offer API" matched 2 entries.
+Disqualifier check: 0 dropped (no "documentation fix" or "preview" flags).
+→ 2 items passed.
+
+Scanning Azure Updates... 14 entries fetched.
+Keyword scan: "MACC", "commit drawdown", "double-drawdown" matched 1 entry.
+Disqualifier check: 0 dropped.
+→ 1 item passed.
+
+Scanning GCP Release Notes... 11 entries fetched.
+Keyword scan: "private catalog", "marketplace procurement" matched 1 entry.
+Disqualifier check: 0 dropped.
+→ 1 item passed. [NOTE: Similar entry detected 2 weeks ago — flagging for diff agent]
+
+Scanning Snowflake Release Notes... 8 entries fetched.
+Keyword scan: "Native App", "billing" matched 1 entry.
+Disqualifier check: 1 dropped ("AWS CLI update" — disqualifier: pure CLI update).
+→ 1 item passed.
+
+Scanning Azure Marketplace Blog... 12 entries fetched.
+Keyword scan: no marketplace-mechanic matches this cycle.
+→ 0 items passed.
+
+Summary: 5 items forwarded to diff agent.</pre>
+    </div>
+
+    <!-- Items table -->
+    <table width="100%" cellpadding="0" cellspacing="0" style="border-collapse:collapse;font-size:13px;">
+      <thead>
+        <tr style="background:#f5f5f5;">
+          <th style="text-align:left;padding:8px 12px;font-weight:700;font-size:10px;text-transform:uppercase;letter-spacing:0.08em;color:#555;border-bottom:1px solid #e0e0e0;">#</th>
+          <th style="text-align:left;padding:8px 12px;font-weight:700;font-size:10px;text-transform:uppercase;letter-spacing:0.08em;color:#555;border-bottom:1px solid #e0e0e0;">Title</th>
+          <th style="text-align:left;padding:8px 12px;font-weight:700;font-size:10px;text-transform:uppercase;letter-spacing:0.08em;color:#555;border-bottom:1px solid #e0e0e0;">Source</th>
+          <th style="text-align:left;padding:8px 12px;font-weight:700;font-size:10px;text-transform:uppercase;letter-spacing:0.08em;color:#555;border-bottom:1px solid #e0e0e0;">Date</th>
+          <th style="text-align:left;padding:8px 12px;font-weight:700;font-size:10px;text-transform:uppercase;letter-spacing:0.08em;color:#555;border-bottom:1px solid #e0e0e0;">Clouds</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="border-bottom:1px solid #f0f0f0;">
+          <td style="padding:10px 12px;color:#767676;font-weight:600;">M-1</td>
+          <td style="padding:10px 12px;font-weight:600;color:#111;">AWS Marketplace AI Agents store: transactional API now GA</td>
+          <td style="padding:10px 12px;color:#555;">AWS What's New</td>
+          <td style="padding:10px 12px;color:#555;white-space:nowrap;">May 2, 2026</td>
+          <td style="padding:10px 12px;"><span style="background:#fff7ed;color:#92400e;border:1px solid #fed7aa;border-radius:3px;padding:1px 6px;font-size:10px;font-weight:700;">AWS</span></td>
+        </tr>
+        <tr style="background:#fafafa;border-bottom:1px solid #f0f0f0;">
+          <td style="padding:10px 12px;color:#767676;font-weight:600;">M-2</td>
+          <td style="padding:10px 12px;font-weight:600;color:#111;">Microsoft extends MACC double-drawdown incentive through Jun 30, 2026</td>
+          <td style="padding:10px 12px;color:#555;">Azure Updates</td>
+          <td style="padding:10px 12px;color:#555;white-space:nowrap;">Apr 30, 2026</td>
+          <td style="padding:10px 12px;"><span style="background:#eff6ff;color:#1e40af;border:1px solid #bfdbfe;border-radius:3px;padding:1px 6px;font-size:10px;font-weight:700;">Azure</span></td>
+        </tr>
+        <tr style="border-bottom:1px solid #f0f0f0;">
+          <td style="padding:10px 12px;color:#767676;font-weight:600;">M-3</td>
+          <td style="padding:10px 12px;font-weight:600;color:#111;">GCP Marketplace private catalog: enterprise pre-approval now self-serve</td>
+          <td style="padding:10px 12px;color:#555;">GCP Release Notes</td>
+          <td style="padding:10px 12px;color:#555;white-space:nowrap;">Apr 29, 2026</td>
+          <td style="padding:10px 12px;"><span style="background:#f0fdf4;color:#166534;border:1px solid #bbf7d0;border-radius:3px;padding:1px 6px;font-size:10px;font-weight:700;">GCP</span></td>
+        </tr>
+        <tr style="background:#fafafa;border-bottom:1px solid #f0f0f0;">
+          <td style="padding:10px 12px;color:#767676;font-weight:600;">M-4</td>
+          <td style="padding:10px 12px;font-weight:600;color:#111;">Snowflake Native App billing: EU regional compliance update</td>
+          <td style="padding:10px 12px;color:#555;">Snowflake Release Notes</td>
+          <td style="padding:10px 12px;color:#555;white-space:nowrap;">May 2, 2026</td>
+          <td style="padding:10px 12px;"><span style="background:#f0f9ff;color:#0c4a6e;border:1px solid #bae6fd;border-radius:3px;padding:1px 6px;font-size:10px;font-weight:700;">Snowflake</span></td>
+        </tr>
+        <tr style="border-bottom:1px solid #f0f0f0;">
+          <td style="padding:10px 12px;color:#767676;font-weight:600;">M-5</td>
+          <td style="padding:10px 12px;font-weight:600;color:#111;">AWS Marketplace listing fee table updated — hybrid pricing clarification</td>
+          <td style="padding:10px 12px;color:#555;">AWS Marketplace Blog</td>
+          <td style="padding:10px 12px;color:#555;white-space:nowrap;">Apr 29, 2026</td>
+          <td style="padding:10px 12px;"><span style="background:#fff7ed;color:#92400e;border:1px solid #fed7aa;border-radius:3px;padding:1px 6px;font-size:10px;font-weight:700;">AWS</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Agent 2: Co-sell -->
+  <div style="background:#ffffff;border:1px solid #ebebeb;border-top:none;padding:28px 32px;">
+    <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;">
+      <span style="font-family:Lexend,sans-serif;font-size:16px;font-weight:700;color:#111;">Co-sell agent</span>
+      <span style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;background:#f5f5f5;color:#555;border-radius:4px;padding:2px 7px;">09:00–09:14 · 14 min</span>
+    </div>
+    <p style="font-size:13px;color:#555;margin:0 0 16px;line-height:1.7;">Scanned 4 sources · Fetched 38 entries · Applied keyword filters → 4 candidates · Applied disqualifiers → 2 passed</p>
+
+    <div style="background:#0f172a;border-radius:8px;padding:18px 22px;margin-bottom:20px;overflow-x:auto;">
+      <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:#4ade80;margin-bottom:10px;">Agent reasoning</div>
+      <pre style="margin:0;font-family:'JetBrains Mono',monospace;font-size:12px;color:#cbd5e1;line-height:1.7;white-space:pre-wrap;">Scanning AWS Partner Network Blog... 14 entries fetched.
+Keyword scan: "ISV Accelerate", "AI-Native", "ACE opportunity", "co-sell eligible" matched 2 entries.
+Disqualifier check: 1 dropped ("AWS Lambda launch partner" — pure engineering, not co-sell mechanic).
+→ 1 item passed.
+
+Scanning Azure Partner Blog... 11 entries fetched.
+Keyword scan: "Solutions Partner", "AI Platform designation", "co-sell eligible" matched 2 entries.
+Disqualifier check: 1 dropped ("Azure Marketplace listing checklist refresh" — documentation update).
+→ 1 item passed.
+
+Scanning GCP Partner Blog... 9 entries fetched.
+Keyword scan: "GCP Premier", "partner tier" matched 0 entries this cycle.
+→ 0 items passed.
+
+Scanning AWS ISV Accelerate program pages... 4 entries fetched.
+[NOTE: These pages are semi-static. Content hash comparison forwarded to diff agent.]
+Keyword scan: 0 new entries since last snapshot.
+→ 0 items passed (will surface via diff if hash changes).
+
+Summary: 2 items forwarded to diff agent.</pre>
+    </div>
+
+    <table width="100%" cellpadding="0" cellspacing="0" style="border-collapse:collapse;font-size:13px;">
+      <thead>
+        <tr style="background:#f5f5f5;">
+          <th style="text-align:left;padding:8px 12px;font-weight:700;font-size:10px;text-transform:uppercase;letter-spacing:0.08em;color:#555;border-bottom:1px solid #e0e0e0;">#</th>
+          <th style="text-align:left;padding:8px 12px;font-weight:700;font-size:10px;text-transform:uppercase;letter-spacing:0.08em;color:#555;border-bottom:1px solid #e0e0e0;">Title</th>
+          <th style="text-align:left;padding:8px 12px;font-weight:700;font-size:10px;text-transform:uppercase;letter-spacing:0.08em;color:#555;border-bottom:1px solid #e0e0e0;">Source</th>
+          <th style="text-align:left;padding:8px 12px;font-weight:700;font-size:10px;text-transform:uppercase;letter-spacing:0.08em;color:#555;border-bottom:1px solid #e0e0e0;">Date</th>
+          <th style="text-align:left;padding:8px 12px;font-weight:700;font-size:10px;text-transform:uppercase;letter-spacing:0.08em;color:#555;border-bottom:1px solid #e0e0e0;">Clouds</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="border-bottom:1px solid #f0f0f0;">
+          <td style="padding:10px 12px;color:#767676;font-weight:600;">C-1</td>
+          <td style="padding:10px 12px;font-weight:600;color:#111;">AWS ISV Accelerate introduces "AI-Native" track with modified ARR thresholds</td>
+          <td style="padding:10px 12px;color:#555;">AWS Partner Network Blog</td>
+          <td style="padding:10px 12px;color:#555;white-space:nowrap;">Apr 28, 2026</td>
+          <td style="padding:10px 12px;"><span style="background:#fff7ed;color:#92400e;border:1px solid #fed7aa;border-radius:3px;padding:1px 6px;font-size:10px;font-weight:700;">AWS</span></td>
+        </tr>
+        <tr style="background:#fafafa;">
+          <td style="padding:10px 12px;color:#767676;font-weight:600;">C-2</td>
+          <td style="padding:10px 12px;font-weight:600;color:#111;">Azure Solutions Partner AI Platform designation: final requirements published</td>
+          <td style="padding:10px 12px;color:#555;">Azure Partner Blog</td>
+          <td style="padding:10px 12px;color:#555;white-space:nowrap;">May 1, 2026</td>
+          <td style="padding:10px 12px;"><span style="background:#eff6ff;color:#1e40af;border:1px solid #bfdbfe;border-radius:3px;padding:1px 6px;font-size:10px;font-weight:700;">Azure</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Agent 3: Cloud market -->
+  <div style="background:#ffffff;border:1px solid #ebebeb;border-top:none;border-radius:0 0 8px 8px;padding:28px 32px;margin-bottom:24px;">
+    <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;">
+      <span style="font-family:Lexend,sans-serif;font-size:16px;font-weight:700;color:#111;">Cloud market agent</span>
+      <span style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;background:#f5f5f5;color:#555;border-radius:4px;padding:2px 7px;">09:01–09:22 · 21 min</span>
+    </div>
+    <p style="font-size:13px;color:#555;margin:0 0 16px;line-height:1.7;">Scanned 3 sources · Fetched 41 entries · Applied keyword filters → 5 candidates · Applied disqualifiers → 2 passed</p>
+
+    <div style="background:#0f172a;border-radius:8px;padding:18px 22px;margin-bottom:20px;overflow-x:auto;">
+      <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:#4ade80;margin-bottom:10px;">Agent reasoning</div>
+      <pre style="margin:0;font-family:'JetBrains Mono',monospace;font-size:12px;color:#cbd5e1;line-height:1.7;white-space:pre-wrap;">Scanning Last Week in AWS (lastweekinaws.com)... 18 entries fetched.
+Keyword scan: "cloud marketplace", "marketplace revenue", "ISV" matched 2 entries.
+  Entry A: "AWS Marketplace crosses $25B annual run rate" — date Apr 30, 2026.
+  Entry B: "Bedrock Marketplace adds 40 foundation models" — date Apr 21, 2026.
+Disqualifier check: 0 dropped.
+→ 2 items passed.
+
+Scanning TechCrunch Cloud... 14 entries fetched.
+Keyword scan: "cloud marketplace", "hyperscaler", "ISV" matched 2 entries.
+Disqualifier check: 1 dropped ("Azure AI Foundry SDK preview" — developer preview, no listing impact).
+→ 1 item passed (note: same story as Entry B above — dupe detected, flagging for diff agent).
+
+Scanning The Register... 9 entries fetched.
+Keyword scan: "marketplace", "cloud commit", "co-sell" matched 1 entry.
+Disqualifier check: 0 dropped.
+→ 1 item passed: "Microsoft's cloud commit push: why partners are doubling down on MACC"
+[NOTE: This is editorial/analytical. Confidence: medium. Content may overlap with M-2.]
+
+Summary: 2 unique items forwarded (dedup: Bedrock model story forwarded once; editorial flagged low-confidence).</pre>
+    </div>
+
+    <table width="100%" cellpadding="0" cellspacing="0" style="border-collapse:collapse;font-size:13px;">
+      <thead>
+        <tr style="background:#f5f5f5;">
+          <th style="text-align:left;padding:8px 12px;font-weight:700;font-size:10px;text-transform:uppercase;letter-spacing:0.08em;color:#555;border-bottom:1px solid #e0e0e0;">#</th>
+          <th style="text-align:left;padding:8px 12px;font-weight:700;font-size:10px;text-transform:uppercase;letter-spacing:0.08em;color:#555;border-bottom:1px solid #e0e0e0;">Title</th>
+          <th style="text-align:left;padding:8px 12px;font-weight:700;font-size:10px;text-transform:uppercase;letter-spacing:0.08em;color:#555;border-bottom:1px solid #e0e0e0;">Source</th>
+          <th style="text-align:left;padding:8px 12px;font-weight:700;font-size:10px;text-transform:uppercase;letter-spacing:0.08em;color:#555;border-bottom:1px solid #e0e0e0;">Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="border-bottom:1px solid #f0f0f0;">
+          <td style="padding:10px 12px;color:#767676;font-weight:600;">L-1</td>
+          <td style="padding:10px 12px;font-weight:600;color:#111;">AWS Marketplace crosses $25B annual run rate — analyst coverage</td>
+          <td style="padding:10px 12px;color:#555;">Last Week in AWS</td>
+          <td style="padding:10px 12px;color:#555;white-space:nowrap;">Apr 30, 2026</td>
+        </tr>
+        <tr style="background:#fafafa;">
+          <td style="padding:10px 12px;color:#767676;font-weight:600;">L-2</td>
+          <td style="padding:10px 12px;font-weight:600;color:#111;">Bedrock Marketplace adds 40+ foundation models — pay-per-token via marketplace</td>
+          <td style="padding:10px 12px;color:#555;">Last Week in AWS</td>
+          <td style="padding:10px 12px;color:#555;white-space:nowrap;">Apr 21, 2026</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+
+  <!-- ══════════════════════════════════════
+       LAYER 2a — DIFF / SNAP
+  ══════════════════════════════════════ -->
+  <div style="background:#334155;border-radius:8px 8px 0 0;padding:10px 20px;">
+    <span style="font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:0.14em;color:#ffffff;">Layer 2a — Diff / Snap (09:22–09:29 UTC · 7 min)</span>
+  </div>
+  <div style="background:#ffffff;border:1px solid #ebebeb;border-top:none;border-radius:0 0 8px 8px;padding:28px 32px;margin-bottom:24px;">
+
+    <div style="background:#0f172a;border-radius:8px;padding:18px 22px;margin-bottom:20px;overflow-x:auto;">
+      <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:#4ade80;margin-bottom:10px;">Agent reasoning</div>
+      <pre style="margin:0;font-family:'JetBrains Mono',monospace;font-size:12px;color:#cbd5e1;line-height:1.7;white-space:pre-wrap;">Processing 9 items from discovery agents.
+
+[M-1] "AWS Marketplace AI Agents store: transactional API now GA"
+  Lookup: marketplace:aws-whats-new-agents-store → no prior snapshot found.
+  Classification: NEW. Writing snapshot key: marketplace:aws-whats-new-agents-store:2026-05-02
+  ✓ Forwarding to mediation.
+
+[M-2] "Microsoft extends MACC double-drawdown..."
+  Lookup: marketplace:azure-updates-macc-drawdown → no prior snapshot found.
+  Classification: NEW. Writing snapshot.
+  ✓ Forwarding to mediation.
+
+[M-3] "GCP Marketplace private catalog: enterprise pre-approval now self-serve"
+  Lookup: marketplace:gcp-release-notes-private-catalog → prior snapshot: 2026-04-22
+  Hash comparison: MISMATCH. Content delta detected.
+  Diff summary: Apr 22 snapshot described "private catalog in preview for enterprise accounts."
+    Current version removes "preview" language, adds self-serve enrollment steps, adds GA date.
+  Classification: UPDATED. Confidence: high.
+  ✓ Forwarding to mediation.
+
+[M-4] "Snowflake Native App billing: EU regional compliance update"
+  Lookup: marketplace:snowflake-release-notes-native-app-billing → no prior snapshot.
+  Classification: NEW. Writing snapshot.
+  ✓ Forwarding to mediation.
+
+[M-5] "AWS Marketplace listing fee table updated — hybrid pricing clarification"
+  Lookup: marketplace:aws-marketplace-blog-listing-fee-hybrid → no prior snapshot.
+  Classification: NEW. Writing snapshot.
+  ✓ Forwarding to mediation.
+
+[C-1] "AWS ISV Accelerate introduces AI-Native track"
+  Lookup: co-sell:apn-blog-isv-accelerate-ai-native → no prior snapshot.
+  Classification: NEW. Writing snapshot.
+  ✓ Forwarding to mediation.
+
+[C-2] "Azure Solutions Partner AI Platform designation: final requirements"
+  Lookup: co-sell:azure-partner-blog-ai-platform-designation → prior snapshot: 2025-11-14
+  Hash comparison: MISMATCH. Content delta detected.
+  Diff summary: Nov 2025 snapshot was an announcement with "coming in 2026."
+    Current version includes specific requirements (3 assessments + 5 deployed workloads),
+    exact launch date (Jul 1, 2026), and marketplace placement details.
+  Classification: UPDATED. Confidence: high.
+  ✓ Forwarding to mediation.
+
+[L-1] "AWS Marketplace crosses $25B annual run rate"
+  Lookup: cloud:lastweekinaws-marketplace-25b → no prior snapshot.
+  Classification: NEW. Writing snapshot.
+  ✓ Forwarding to mediation.
+
+[L-2] "Bedrock Marketplace adds 40+ foundation models"
+  Lookup: cloud:lastweekinaws-bedrock-models-40 → prior snapshot: 2026-04-21
+  Hash comparison: MATCH. No content delta.
+  Classification: UNCHANGED. Dropping.
+  ✗ Not forwarding. (Logged: cloud:lastweekinaws-bedrock-models-40 unchanged, 2026-05-05)
+
+Total: 8 forwarded, 1 dropped (unchanged).</pre>
+    </div>
+
+    <table width="100%" cellpadding="0" cellspacing="0" style="border-collapse:collapse;font-size:13px;">
+      <thead>
+        <tr style="background:#f5f5f5;">
+          <th style="text-align:left;padding:8px 12px;font-weight:700;font-size:10px;text-transform:uppercase;letter-spacing:0.08em;color:#555;border-bottom:1px solid #e0e0e0;">Item</th>
+          <th style="text-align:left;padding:8px 12px;font-weight:700;font-size:10px;text-transform:uppercase;letter-spacing:0.08em;color:#555;border-bottom:1px solid #e0e0e0;">Classification</th>
+          <th style="text-align:left;padding:8px 12px;font-weight:700;font-size:10px;text-transform:uppercase;letter-spacing:0.08em;color:#555;border-bottom:1px solid #e0e0e0;">Prior snap</th>
+          <th style="text-align:left;padding:8px 12px;font-weight:700;font-size:10px;text-transform:uppercase;letter-spacing:0.08em;color:#555;border-bottom:1px solid #e0e0e0;">Confidence</th>
+          <th style="text-align:left;padding:8px 12px;font-weight:700;font-size:10px;text-transform:uppercase;letter-spacing:0.08em;color:#555;border-bottom:1px solid #e0e0e0;">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="border-bottom:1px solid #f0f0f0;"><td style="padding:9px 12px;color:#555;font-size:12px;">M-1</td><td style="padding:9px 12px;"><span style="background:#dcfce7;color:#166534;border-radius:4px;padding:1px 7px;font-size:10px;font-weight:700;">NEW</span></td><td style="padding:9px 12px;color:#767676;font-size:12px;">—</td><td style="padding:9px 12px;color:#555;font-size:12px;">High</td><td style="padding:9px 12px;color:#166534;font-size:12px;font-weight:600;">→ Mediation</td></tr>
+        <tr style="background:#fafafa;border-bottom:1px solid #f0f0f0;"><td style="padding:9px 12px;color:#555;font-size:12px;">M-2</td><td style="padding:9px 12px;"><span style="background:#dcfce7;color:#166534;border-radius:4px;padding:1px 7px;font-size:10px;font-weight:700;">NEW</span></td><td style="padding:9px 12px;color:#767676;font-size:12px;">—</td><td style="padding:9px 12px;color:#555;font-size:12px;">High</td><td style="padding:9px 12px;color:#166534;font-size:12px;font-weight:600;">→ Mediation</td></tr>
+        <tr style="border-bottom:1px solid #f0f0f0;"><td style="padding:9px 12px;color:#555;font-size:12px;">M-3</td><td style="padding:9px 12px;"><span style="background:#fef3c7;color:#92400e;border-radius:4px;padding:1px 7px;font-size:10px;font-weight:700;">UPDATED</span></td><td style="padding:9px 12px;color:#767676;font-size:12px;">Apr 22, 2026</td><td style="padding:9px 12px;color:#555;font-size:12px;">High</td><td style="padding:9px 12px;color:#166534;font-size:12px;font-weight:600;">→ Mediation</td></tr>
+        <tr style="background:#fafafa;border-bottom:1px solid #f0f0f0;"><td style="padding:9px 12px;color:#555;font-size:12px;">M-4</td><td style="padding:9px 12px;"><span style="background:#dcfce7;color:#166534;border-radius:4px;padding:1px 7px;font-size:10px;font-weight:700;">NEW</span></td><td style="padding:9px 12px;color:#767676;font-size:12px;">—</td><td style="padding:9px 12px;color:#555;font-size:12px;">High</td><td style="padding:9px 12px;color:#166534;font-size:12px;font-weight:600;">→ Mediation</td></tr>
+        <tr style="border-bottom:1px solid #f0f0f0;"><td style="padding:9px 12px;color:#555;font-size:12px;">M-5</td><td style="padding:9px 12px;"><span style="background:#dcfce7;color:#166534;border-radius:4px;padding:1px 7px;font-size:10px;font-weight:700;">NEW</span></td><td style="padding:9px 12px;color:#767676;font-size:12px;">—</td><td style="padding:9px 12px;color:#555;font-size:12px;">High</td><td style="padding:9px 12px;color:#166534;font-size:12px;font-weight:600;">→ Mediation</td></tr>
+        <tr style="background:#fafafa;border-bottom:1px solid #f0f0f0;"><td style="padding:9px 12px;color:#555;font-size:12px;">C-1</td><td style="padding:9px 12px;"><span style="background:#dcfce7;color:#166534;border-radius:4px;padding:1px 7px;font-size:10px;font-weight:700;">NEW</span></td><td style="padding:9px 12px;color:#767676;font-size:12px;">—</td><td style="padding:9px 12px;color:#555;font-size:12px;">High</td><td style="padding:9px 12px;color:#166534;font-size:12px;font-weight:600;">→ Mediation</td></tr>
+        <tr style="border-bottom:1px solid #f0f0f0;"><td style="padding:9px 12px;color:#555;font-size:12px;">C-2</td><td style="padding:9px 12px;"><span style="background:#fef3c7;color:#92400e;border-radius:4px;padding:1px 7px;font-size:10px;font-weight:700;">UPDATED</span></td><td style="padding:9px 12px;color:#767676;font-size:12px;">Nov 14, 2025</td><td style="padding:9px 12px;color:#555;font-size:12px;">High</td><td style="padding:9px 12px;color:#166534;font-size:12px;font-weight:600;">→ Mediation</td></tr>
+        <tr style="background:#fafafa;border-bottom:1px solid #f0f0f0;"><td style="padding:9px 12px;color:#555;font-size:12px;">L-1</td><td style="padding:9px 12px;"><span style="background:#dcfce7;color:#166534;border-radius:4px;padding:1px 7px;font-size:10px;font-weight:700;">NEW</span></td><td style="padding:9px 12px;color:#767676;font-size:12px;">—</td><td style="padding:9px 12px;color:#555;font-size:12px;">High</td><td style="padding:9px 12px;color:#166534;font-size:12px;font-weight:600;">→ Mediation</td></tr>
+        <tr style="background:#fff5f5;"><td style="padding:9px 12px;color:#555;font-size:12px;">L-2</td><td style="padding:9px 12px;"><span style="background:#f5f5f5;color:#767676;border-radius:4px;padding:1px 7px;font-size:10px;font-weight:700;">UNCHANGED</span></td><td style="padding:9px 12px;color:#767676;font-size:12px;">Apr 21, 2026</td><td style="padding:9px 12px;color:#555;font-size:12px;">High</td><td style="padding:9px 12px;color:#dc2626;font-size:12px;font-weight:600;">✗ Dropped</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+
+  <!-- ══════════════════════════════════════
+       LAYER 2b — CONTENT MEDIATION
+  ══════════════════════════════════════ -->
+  <div style="background:#7c3aed;border-radius:8px 8px 0 0;padding:10px 20px;">
+    <span style="font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:0.14em;color:#ffffff;">Layer 2b — Content Mediation (09:29–09:48 UTC · 19 min)</span>
+  </div>
+  <div style="background:#ffffff;border:1px solid #ebebeb;border-top:none;border-radius:0 0 8px 8px;padding:28px 32px;margin-bottom:24px;">
+
+    <div style="background:#0f172a;border-radius:8px;padding:18px 22px;margin-bottom:24px;overflow-x:auto;">
+      <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:#4ade80;margin-bottom:10px;">Agent reasoning — scoring pass</div>
+      <pre style="margin:0;font-family:'JetBrains Mono',monospace;font-size:12px;color:#cbd5e1;line-height:1.7;white-space:pre-wrap;">[M-1] AWS AI Agents store transactional API GA
+  Sales-motion impact: YES (+2) — new billing mechanic changes how ISVs price agent products.
+  Buyer incentive shift: YES (+2) — pay-per-use via marketplace enables procurement flexibility.
+  Program eligibility: NO (+0) — no co-sell or commit program change.
+  Cross-hyperscaler: NO (+0) — AWS only.
+  Recency: May 2, 2026 → 3 days ago (+2).
+  Score: 6 → capped at 5. Route: NEWSLETTER. Audience: BOTH.
+  Rationale: First-of-kind marketplace billing for AI agents. Affects ISVs and buyers equally.
+
+[M-2] Microsoft MACC double-drawdown extended through Jun 30
+  Sales-motion impact: YES (+2) — changes close strategy for all MACC-eligible deals.
+  Buyer incentive shift: YES (+2) — double credit on marketplace spend is a buyer incentive.
+  Program eligibility: YES (+2) — MACC drawdown rule change affects eligibility calculation.
+  Cross-hyperscaler: NO (+0) — Azure only.
+  Recency: Apr 30, 2026 → 5 days ago (+2).
+  Score: 8 → capped at 5. Route: NEWSLETTER. Audience: BOTH.
+  [NOTE: Time-sensitive — incentive expires Jun 30. Flag for near-term edition.]
+
+[M-3] GCP private catalog: enterprise pre-approval now self-serve (UPDATED from preview)
+  Sales-motion impact: YES (+2) — removes sales friction for enterprise buyers.
+  Buyer incentive shift: NO (+0) — no pricing change.
+  Program eligibility: NO (+0).
+  Cross-hyperscaler: NO (+0).
+  Recency: Apr 29, 2026 → 6 days ago (+2).
+  Score: 4. Route: NEWSLETTER. Audience: 201.
+  Rationale: Operational change, not pricing. High-value for practitioners managing enterprise accounts.
+
+[M-4] Snowflake Native App billing: EU regional compliance
+  Sales-motion impact: YES (+1) — affects billing for EU-region deployments only.
+  Buyer incentive shift: NO (+0).
+  Program eligibility: NO (+0).
+  Cross-hyperscaler: NO (+0).
+  Recency: May 2, 2026 → 3 days ago (+2).
+  Score: 3. Route: GUIDE-UPDATE. Audience: 201.
+  Rationale: Compliance detail, not a broad program change. Guide section: "Getting listed: Snowflake."
+
+[M-5] AWS listing fee table: hybrid pricing clarification
+  Sales-motion impact: YES (+1) — clarifies fee calculation affecting margin estimates.
+  Buyer incentive shift: NO (+0).
+  Program eligibility: NO (+0).
+  Cross-hyperscaler: NO (+0).
+  Recency: Apr 29, 2026 → 6 days ago (+2).
+  Score: 3. Route: GUIDE-UPDATE. Audience: BOTH.
+  Rationale: Documentation clarity, not a mechanic change. Guide section: "Pricing models."
+
+[C-1] AWS ISV Accelerate AI-Native track with modified ARR thresholds
+  Sales-motion impact: YES (+2) — changes eligibility for co-sell benefits, affecting deal support.
+  Buyer incentive shift: NO (+0).
+  Program eligibility: YES (+2) — new track with different ARR requirements.
+  Cross-hyperscaler: NO (+0).
+  Recency: Apr 28, 2026 → 7 days ago (+2).
+  Score: 6 → capped at 5. Route: NEWSLETTER. Audience: 201.
+  Rationale: Major program change for AI-native ISVs. Directly affects co-sell motion.
+
+[C-2] Azure AI Platform designation: final requirements published (UPDATED from announcement)
+  Sales-motion impact: NO (+0).
+  Buyer incentive shift: NO (+0).
+  Program eligibility: YES (+2) — finalizes requirements ISVs must meet for marketplace placement.
+  Cross-hyperscaler: NO (+0).
+  Recency: May 1, 2026 → 4 days ago (+2).
+  Score: 4. Route: NEWSLETTER. Audience: 201.
+  Rationale: Actionable now. ISVs who saw the Ignite 2025 preview can now plan for Jul 2026 launch.
+
+[L-1] AWS Marketplace crosses $25B ARR
+  Sales-motion impact: NO (+0) — market stat, not a mechanic change.
+  Buyer incentive shift: NO (+0).
+  Program eligibility: NO (+0).
+  Cross-hyperscaler: YES (+1) — signals overall market momentum relevant to all clouds.
+  Recency: Apr 30, 2026 → 5 days ago (+2).
+  Score: 3. Route: GUIDE-UPDATE. Audience: BOTH.
+  Rationale: Background context for "What is cloud marketplace?" guide section. Not actionable news.</pre>
+    </div>
+
+    <table width="100%" cellpadding="0" cellspacing="0" style="border-collapse:collapse;font-size:13px;">
+      <thead>
+        <tr style="background:#f5f5f5;">
+          <th style="text-align:left;padding:8px 12px;font-weight:700;font-size:10px;text-transform:uppercase;letter-spacing:0.08em;color:#555;border-bottom:1px solid #e0e0e0;">Item</th>
+          <th style="text-align:left;padding:8px 12px;font-weight:700;font-size:10px;text-transform:uppercase;letter-spacing:0.08em;color:#555;border-bottom:1px solid #e0e0e0;">Score</th>
+          <th style="text-align:left;padding:8px 12px;font-weight:700;font-size:10px;text-transform:uppercase;letter-spacing:0.08em;color:#555;border-bottom:1px solid #e0e0e0;">Route</th>
+          <th style="text-align:left;padding:8px 12px;font-weight:700;font-size:10px;text-transform:uppercase;letter-spacing:0.08em;color:#555;border-bottom:1px solid #e0e0e0;">Audience</th>
+          <th style="text-align:left;padding:8px 12px;font-weight:700;font-size:10px;text-transform:uppercase;letter-spacing:0.08em;color:#555;border-bottom:1px solid #e0e0e0;">Rationale (condensed)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="border-bottom:1px solid #f0f0f0;background:#fffbf5;">
+          <td style="padding:9px 12px;font-weight:600;font-size:12px;color:#555;">M-1</td>
+          <td style="padding:9px 12px;"><strong style="font-size:15px;">5</strong><span style="color:#767676;font-size:11px;">/5</span></td>
+          <td style="padding:9px 12px;"><span style="background:rgba(242,106,28,0.1);color:#ae530f;border-radius:4px;padding:2px 8px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;">Newsletter</span></td>
+          <td style="padding:9px 12px;font-size:12px;color:#555;">Both</td>
+          <td style="padding:9px 12px;font-size:12px;color:#555;line-height:1.5;">First-of-kind billing for AI agents. Affects pricing strategy for all ISVs.</td>
+        </tr>
+        <tr style="border-bottom:1px solid #f0f0f0;background:#fffbf5;">
+          <td style="padding:9px 12px;font-weight:600;font-size:12px;color:#555;">M-2 <span style="color:#dc2626;font-size:10px;">⏰</span></td>
+          <td style="padding:9px 12px;"><strong style="font-size:15px;">5</strong><span style="color:#767676;font-size:11px;">/5</span></td>
+          <td style="padding:9px 12px;"><span style="background:rgba(242,106,28,0.1);color:#ae530f;border-radius:4px;padding:2px 8px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;">Newsletter</span></td>
+          <td style="padding:9px 12px;font-size:12px;color:#555;">Both</td>
+          <td style="padding:9px 12px;font-size:12px;color:#555;line-height:1.5;">Expires Jun 30. Time-sensitive — covers close strategy for MACC-eligible deals this quarter.</td>
+        </tr>
+        <tr style="border-bottom:1px solid #f0f0f0;background:#fffbf5;">
+          <td style="padding:9px 12px;font-weight:600;font-size:12px;color:#555;">M-3</td>
+          <td style="padding:9px 12px;"><strong style="font-size:15px;">4</strong><span style="color:#767676;font-size:11px;">/5</span></td>
+          <td style="padding:9px 12px;"><span style="background:rgba(242,106,28,0.1);color:#ae530f;border-radius:4px;padding:2px 8px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;">Newsletter</span></td>
+          <td style="padding:9px 12px;font-size:12px;color:#555;">201</td>
+          <td style="padding:9px 12px;font-size:12px;color:#555;line-height:1.5;">Preview → GA. Self-serve removes sales cycle friction for enterprise GCP accounts.</td>
+        </tr>
+        <tr style="border-bottom:1px solid #f0f0f0;background:#f8faff;">
+          <td style="padding:9px 12px;font-weight:600;font-size:12px;color:#555;">M-4</td>
+          <td style="padding:9px 12px;"><strong style="font-size:15px;">3</strong><span style="color:#767676;font-size:11px;">/5</span></td>
+          <td style="padding:9px 12px;"><span style="background:#dbeafe;color:#1e40af;border-radius:4px;padding:2px 8px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;">Guide update</span></td>
+          <td style="padding:9px 12px;font-size:12px;color:#555;">201</td>
+          <td style="padding:9px 12px;font-size:12px;color:#555;line-height:1.5;">EU compliance detail. Guide section: "Getting listed: Snowflake."</td>
+        </tr>
+        <tr style="border-bottom:1px solid #f0f0f0;background:#f8faff;">
+          <td style="padding:9px 12px;font-weight:600;font-size:12px;color:#555;">M-5</td>
+          <td style="padding:9px 12px;"><strong style="font-size:15px;">3</strong><span style="color:#767676;font-size:11px;">/5</span></td>
+          <td style="padding:9px 12px;"><span style="background:#dbeafe;color:#1e40af;border-radius:4px;padding:2px 8px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;">Guide update</span></td>
+          <td style="padding:9px 12px;font-size:12px;color:#555;">Both</td>
+          <td style="padding:9px 12px;font-size:12px;color:#555;line-height:1.5;">Documentation clarity. Guide section: "Pricing models: metered vs. flat-rate."</td>
+        </tr>
+        <tr style="border-bottom:1px solid #f0f0f0;background:#fffbf5;">
+          <td style="padding:9px 12px;font-weight:600;font-size:12px;color:#555;">C-1</td>
+          <td style="padding:9px 12px;"><strong style="font-size:15px;">5</strong><span style="color:#767676;font-size:11px;">/5</span></td>
+          <td style="padding:9px 12px;"><span style="background:rgba(242,106,28,0.1);color:#ae530f;border-radius:4px;padding:2px 8px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;">Newsletter</span></td>
+          <td style="padding:9px 12px;font-size:12px;color:#555;">201</td>
+          <td style="padding:9px 12px;font-size:12px;color:#555;line-height:1.5;">New co-sell track for AI-native ISVs. Major eligibility change with modified ARR thresholds.</td>
+        </tr>
+        <tr style="border-bottom:1px solid #f0f0f0;background:#fffbf5;">
+          <td style="padding:9px 12px;font-weight:600;font-size:12px;color:#555;">C-2</td>
+          <td style="padding:9px 12px;"><strong style="font-size:15px;">4</strong><span style="color:#767676;font-size:11px;">/5</span></td>
+          <td style="padding:9px 12px;"><span style="background:rgba(242,106,28,0.1);color:#ae530f;border-radius:4px;padding:2px 8px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;">Newsletter</span></td>
+          <td style="padding:9px 12px;font-size:12px;color:#555;">201</td>
+          <td style="padding:9px 12px;font-size:12px;color:#555;line-height:1.5;">Moved from announced to finalized. ISVs can now plan for Jul 2026 launch.</td>
+        </tr>
+        <tr style="background:#f8faff;">
+          <td style="padding:9px 12px;font-weight:600;font-size:12px;color:#555;">L-1</td>
+          <td style="padding:9px 12px;"><strong style="font-size:15px;">3</strong><span style="color:#767676;font-size:11px;">/5</span></td>
+          <td style="padding:9px 12px;"><span style="background:#dbeafe;color:#1e40af;border-radius:4px;padding:2px 8px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;">Guide update</span></td>
+          <td style="padding:9px 12px;font-size:12px;color:#555;">Both</td>
+          <td style="padding:9px 12px;font-size:12px;color:#555;line-height:1.5;">Market context. Guide section: "What is cloud marketplace?"</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+
+  <!-- ══════════════════════════════════════
+       TIME & MOTION STUDY
+  ══════════════════════════════════════ -->
+  <div style="background:#111;border-radius:8px 8px 0 0;padding:10px 20px;">
+    <span style="font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:0.14em;color:#ffffff;">Time &amp; Motion Study — Run #19</span>
+  </div>
+  <div style="background:#ffffff;border:1px solid #ebebeb;border-top:none;border-radius:0 0 8px 8px;padding:28px 32px;margin-bottom:24px;">
+
+    <table width="100%" cellpadding="0" cellspacing="0" style="border-collapse:collapse;font-size:13px;">
+      <thead>
+        <tr style="background:#1a1a2e;">
+          <th style="text-align:left;padding:10px 12px;font-weight:700;font-size:10px;text-transform:uppercase;letter-spacing:0.08em;color:#ffffff;border-bottom:2px solid #f26a1c;">Step</th>
+          <th style="text-align:center;padding:10px 12px;font-weight:700;font-size:10px;text-transform:uppercase;letter-spacing:0.08em;color:#ffffff;border-bottom:2px solid #f26a1c;">Start</th>
+          <th style="text-align:center;padding:10px 12px;font-weight:700;font-size:10px;text-transform:uppercase;letter-spacing:0.08em;color:#ffffff;border-bottom:2px solid #f26a1c;">End</th>
+          <th style="text-align:center;padding:10px 12px;font-weight:700;font-size:10px;text-transform:uppercase;letter-spacing:0.08em;color:#ffffff;border-bottom:2px solid #f26a1c;">Duration</th>
+          <th style="text-align:center;padding:10px 12px;font-weight:700;font-size:10px;text-transform:uppercase;letter-spacing:0.08em;color:#ffffff;border-bottom:2px solid #f26a1c;">In</th>
+          <th style="text-align:center;padding:10px 12px;font-weight:700;font-size:10px;text-transform:uppercase;letter-spacing:0.08em;color:#ffffff;border-bottom:2px solid #f26a1c;">Out</th>
+          <th style="text-align:left;padding:10px 12px;font-weight:700;font-size:10px;text-transform:uppercase;letter-spacing:0.08em;color:#ffffff;border-bottom:2px solid #f26a1c;">Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="border-bottom:1px solid #f0f0f0;">
+          <td style="padding:10px 12px;font-weight:600;color:#111;">Trigger</td>
+          <td style="padding:10px 12px;text-align:center;color:#555;font-family:'JetBrains Mono',monospace;font-size:12px;">09:00</td>
+          <td style="padding:10px 12px;text-align:center;color:#555;font-family:'JetBrains Mono',monospace;font-size:12px;">09:00</td>
+          <td style="padding:10px 12px;text-align:center;color:#767676;font-size:12px;">—</td>
+          <td style="padding:10px 12px;text-align:center;color:#767676;font-size:12px;">—</td>
+          <td style="padding:10px 12px;text-align:center;color:#767676;font-size:12px;">—</td>
+          <td style="padding:10px 12px;color:#555;font-size:12px;">Weekly schedule, Monday</td>
+        </tr>
+        <tr style="background:#fffbf5;border-bottom:1px solid #f0f0f0;">
+          <td style="padding:10px 12px;font-weight:600;color:#111;">Marketplace agent</td>
+          <td style="padding:10px 12px;text-align:center;color:#555;font-family:'JetBrains Mono',monospace;font-size:12px;">09:00</td>
+          <td style="padding:10px 12px;text-align:center;color:#555;font-family:'JetBrains Mono',monospace;font-size:12px;">09:18</td>
+          <td style="padding:10px 12px;text-align:center;font-weight:600;color:#ae530f;font-size:13px;">18 min</td>
+          <td style="padding:10px 12px;text-align:center;color:#555;font-size:12px;">72 entries</td>
+          <td style="padding:10px 12px;text-align:center;color:#555;font-size:12px;">5 items</td>
+          <td style="padding:10px 12px;color:#555;font-size:12px;">6 sources; 2 disqualifier drops</td>
+        </tr>
+        <tr style="background:#fffbf5;border-bottom:1px solid #f0f0f0;">
+          <td style="padding:10px 12px;font-weight:600;color:#111;">Co-sell agent</td>
+          <td style="padding:10px 12px;text-align:center;color:#555;font-family:'JetBrains Mono',monospace;font-size:12px;">09:00</td>
+          <td style="padding:10px 12px;text-align:center;color:#555;font-family:'JetBrains Mono',monospace;font-size:12px;">09:14</td>
+          <td style="padding:10px 12px;text-align:center;font-weight:600;color:#ae530f;font-size:13px;">14 min</td>
+          <td style="padding:10px 12px;text-align:center;color:#555;font-size:12px;">38 entries</td>
+          <td style="padding:10px 12px;text-align:center;color:#555;font-size:12px;">2 items</td>
+          <td style="padding:10px 12px;color:#555;font-size:12px;">4 sources; 2 disqualifier drops</td>
+        </tr>
+        <tr style="background:#fffbf5;border-bottom:1px solid #f0f0f0;">
+          <td style="padding:10px 12px;font-weight:600;color:#111;">Cloud market agent</td>
+          <td style="padding:10px 12px;text-align:center;color:#555;font-family:'JetBrains Mono',monospace;font-size:12px;">09:01</td>
+          <td style="padding:10px 12px;text-align:center;color:#555;font-family:'JetBrains Mono',monospace;font-size:12px;">09:22</td>
+          <td style="padding:10px 12px;text-align:center;font-weight:600;color:#ae530f;font-size:13px;">21 min</td>
+          <td style="padding:10px 12px;text-align:center;color:#555;font-size:12px;">41 entries</td>
+          <td style="padding:10px 12px;text-align:center;color:#555;font-size:12px;">2 items</td>
+          <td style="padding:10px 12px;color:#555;font-size:12px;">3 sources; dedup applied</td>
+        </tr>
+        <tr style="background:#fafafa;border-bottom:1px solid #ebebeb;">
+          <td style="padding:4px 12px;color:#767676;font-size:11px;font-style:italic;" colspan="7">↑ Discovery ran in parallel — wall time = slowest agent (21 min)</td>
+        </tr>
+        <tr style="border-bottom:1px solid #f0f0f0;">
+          <td style="padding:10px 12px;font-weight:600;color:#111;">Diff / Snap agent</td>
+          <td style="padding:10px 12px;text-align:center;color:#555;font-family:'JetBrains Mono',monospace;font-size:12px;">09:22</td>
+          <td style="padding:10px 12px;text-align:center;color:#555;font-family:'JetBrains Mono',monospace;font-size:12px;">09:29</td>
+          <td style="padding:10px 12px;text-align:center;font-weight:600;color:#111;font-size:13px;">7 min</td>
+          <td style="padding:10px 12px;text-align:center;color:#555;font-size:12px;">9 items</td>
+          <td style="padding:10px 12px;text-align:center;color:#555;font-size:12px;">8 items</td>
+          <td style="padding:10px 12px;color:#555;font-size:12px;">1 dropped (unchanged hash)</td>
+        </tr>
+        <tr style="border-bottom:1px solid #f0f0f0;">
+          <td style="padding:10px 12px;font-weight:600;color:#111;">Content mediation</td>
+          <td style="padding:10px 12px;text-align:center;color:#555;font-family:'JetBrains Mono',monospace;font-size:12px;">09:29</td>
+          <td style="padding:10px 12px;text-align:center;color:#555;font-family:'JetBrains Mono',monospace;font-size:12px;">09:48</td>
+          <td style="padding:10px 12px;text-align:center;font-weight:600;color:#111;font-size:13px;">19 min</td>
+          <td style="padding:10px 12px;text-align:center;color:#555;font-size:12px;">8 items</td>
+          <td style="padding:10px 12px;text-align:center;color:#555;font-size:12px;">8 items</td>
+          <td style="padding:10px 12px;color:#555;font-size:12px;">5 → newsletter, 3 → guide, 0 discarded</td>
+        </tr>
+        <tr style="border-bottom:1px solid #f0f0f0;">
+          <td style="padding:10px 12px;font-weight:600;color:#111;">Guide update agent</td>
+          <td style="padding:10px 12px;text-align:center;color:#555;font-family:'JetBrains Mono',monospace;font-size:12px;">09:48</td>
+          <td style="padding:10px 12px;text-align:center;color:#555;font-family:'JetBrains Mono',monospace;font-size:12px;">09:52</td>
+          <td style="padding:10px 12px;text-align:center;font-weight:600;color:#111;font-size:13px;">4 min</td>
+          <td style="padding:10px 12px;text-align:center;color:#555;font-size:12px;">3 items</td>
+          <td style="padding:10px 12px;text-align:center;color:#555;font-size:12px;">3 drafts</td>
+          <td style="padding:10px 12px;color:#555;font-size:12px;">Queued for human review</td>
+        </tr>
+        <tr style="background:#1a1a2e;">
+          <td style="padding:12px;font-weight:800;color:#ffffff;font-family:Lexend,sans-serif;">Total wall time</td>
+          <td style="padding:12px;text-align:center;color:#767676;font-family:'JetBrains Mono',monospace;font-size:12px;">09:00</td>
+          <td style="padding:12px;text-align:center;color:#767676;font-family:'JetBrains Mono',monospace;font-size:12px;">09:52</td>
+          <td style="padding:12px;text-align:center;font-weight:800;color:#f26a1c;font-size:16px;font-family:Lexend,sans-serif;">52 min</td>
+          <td style="padding:12px;text-align:center;color:#767676;font-size:12px;">151 entries</td>
+          <td style="padding:12px;text-align:center;color:#4ade80;font-weight:700;font-size:13px;">8 routed</td>
+          <td style="padding:12px;color:#767676;font-size:12px;">0 errors · 0 agent failures</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+
+  <!-- ══════════════════════════════════════
+       OUTPUT QUEUE
+  ══════════════════════════════════════ -->
+  <div style="display:flex;gap:16px;flex-wrap:wrap;margin-bottom:40px;">
+
+    <!-- Newsletter queue -->
+    <div style="flex:1;min-width:260px;background:#ffffff;border:1px solid #ebebeb;border-top:3px solid #f26a1c;border-radius:0 0 8px 8px;padding:20px 24px;">
+      <div style="font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:0.14em;color:#ae530f;margin-bottom:12px;">Newsletter queue — 5 items</div>
+      <ul style="margin:0;padding:0;list-style:none;font-size:13px;line-height:1.8;">
+        <li style="padding:6px 0;border-bottom:1px solid #f5f5f5;color:#111;"><span style="color:#767676;font-weight:700;margin-right:8px;">M-1</span>AWS AI Agents store transactional API GA <span style="background:rgba(220,38,38,0.08);color:#dc2626;border-radius:3px;padding:1px 5px;font-size:10px;font-weight:700;margin-left:6px;">5/5</span></li>
+        <li style="padding:6px 0;border-bottom:1px solid #f5f5f5;color:#111;"><span style="color:#767676;font-weight:700;margin-right:8px;">M-2</span>MACC double-drawdown extended Jun 30 <span style="background:rgba(220,38,38,0.08);color:#dc2626;border-radius:3px;padding:1px 5px;font-size:10px;font-weight:700;margin-left:6px;">5/5</span> <span style="background:#fef2f2;color:#dc2626;border-radius:3px;padding:1px 5px;font-size:10px;font-weight:700;">⏰ urgent</span></li>
+        <li style="padding:6px 0;border-bottom:1px solid #f5f5f5;color:#111;"><span style="color:#767676;font-weight:700;margin-right:8px;">C-1</span>ISV Accelerate AI-Native track <span style="background:rgba(220,38,38,0.08);color:#dc2626;border-radius:3px;padding:1px 5px;font-size:10px;font-weight:700;margin-left:6px;">5/5</span></li>
+        <li style="padding:6px 0;border-bottom:1px solid #f5f5f5;color:#111;"><span style="color:#767676;font-weight:700;margin-right:8px;">M-3</span>GCP private catalog self-serve GA <span style="background:#f5f5f5;color:#555;border-radius:3px;padding:1px 5px;font-size:10px;font-weight:700;margin-left:6px;">4/5</span></li>
+        <li style="padding:6px 0;color:#111;"><span style="color:#767676;font-weight:700;margin-right:8px;">C-2</span>Azure AI Platform designation finalized <span style="background:#f5f5f5;color:#555;border-radius:3px;padding:1px 5px;font-size:10px;font-weight:700;margin-left:6px;">4/5</span></li>
+      </ul>
+    </div>
+
+    <!-- Guide update queue -->
+    <div style="flex:1;min-width:260px;background:#ffffff;border:1px solid #ebebeb;border-top:3px solid #60a5fa;border-radius:0 0 8px 8px;padding:20px 24px;">
+      <div style="font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:0.14em;color:#1e40af;margin-bottom:12px;">Guide update queue — 3 items</div>
+      <ul style="margin:0;padding:0;list-style:none;font-size:13px;line-height:1.8;">
+        <li style="padding:6px 0;border-bottom:1px solid #f5f5f5;color:#111;"><span style="color:#767676;font-weight:700;margin-right:8px;">M-4</span>Snowflake billing EU compliance → <em style="color:#767676;">Getting listed: Snowflake</em></li>
+        <li style="padding:6px 0;border-bottom:1px solid #f5f5f5;color:#111;"><span style="color:#767676;font-weight:700;margin-right:8px;">M-5</span>AWS hybrid listing fee clarification → <em style="color:#767676;">Pricing models</em></li>
+        <li style="padding:6px 0;color:#111;"><span style="color:#767676;font-weight:700;margin-right:8px;">L-1</span>AWS Marketplace $25B ARR → <em style="color:#767676;">What is cloud marketplace?</em></li>
+      </ul>
+      <div style="margin-top:14px;padding:10px 14px;background:#f0f9ff;border-radius:6px;font-size:12px;color:#0c4a6e;line-height:1.6;">
+        <strong>⚑ Awaiting human review.</strong> 3 draft proposals queued. All four team members will be notified. Target: 48h turnaround.
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div style="border-top:1px solid #e0e0e0;padding-top:20px;text-align:center;">
+    <p style="font-size:11px;color:#767676;margin:0;">Suger Cube pipeline — internal report · Run #19 · Mon May 5, 2026</p>
+    <p style="font-size:11px;color:#767676;margin:4px 0 0;">Generated automatically. No items self-publish — all outputs require human approval before commit or send.</p>
+  </div>
+
+</div>
+</body>
+</html>
