@@ -30,6 +30,8 @@ It feeds two downstream outputs:
 | `claude-contexts/ux-outline.md` | **Skill 2 (Daniela)** — UX structure, layout rules, design principles, persona-aware section order, card pattern, navigation, export behavior |
 | `claude-contexts/writing-guide.md` | **Skill 3 (Dia)** — tone, voice, content categories, persona writing angles, tagging rules, quality checklist |
 | `claude-contexts/agents/` | Individual agent spec files (one per agent): role, prompt template, output format, failure behavior |
+| `ai-thought-process-reports/` | Agent thought-process reports from pipeline runs — one `.md` file per run, documents scoring rationale, alternatives considered, and time/motion log. Retained for audit and pipeline tuning; not published. |
+| `draft-newsletters/` | Staged newsletter drafts (HTML snippets with inline styles) awaiting human review. Approved drafts are pushed to `suger-newsletters-platform-prototype/data/topics`. Both approved and pending copies are retained here. |
 | `samples/` | Email-ready HTML samples (pipeline run report, newsletter draft, CS newsletter example, writing-guide mockup) |
 | `claude-contexts/features.md` | Feature inventory and changelog |
 
