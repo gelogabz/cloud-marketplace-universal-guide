@@ -398,7 +398,7 @@ This pipeline doc is the orchestrator. The three skills that drive it are linked
 |---|---|---|---|
 | Topic Discovery | Gelo | ✅ [`claude-contexts/topic-discovery.md`](claude-contexts/topic-discovery.md) | Feeds source list, keyword map, snap/diff mechanism, persona tagging, and event calendar to the discovery + mediation agents |
 | UX / Newsletter Outline | Daniela | ✅ [`claude-contexts/ux-outline.md`](claude-contexts/ux-outline.md) | Used by the newsletter agent to structure section order, persona-aware layout, badges, navigation, and export behavior |
-| Writing Guide | Dia | ✅ [`claude-contexts/writing-guide.md`](claude-contexts/writing-guide.md) | Used by the newsletter agent and guide update agent for tone, persona angle, content category templates, and tagging |
+| Writing Guide | Dia | ✅ [`claude-contexts/writing-guide.md`](claude-contexts/writing-guide.md) | Used by the newsletter agent and guide update agent for tone, four persona writing angles, six content type templates (Action Required, What's New, Policy Update, Concept, Reference, Playbook), 101/201 maturity levels, and quality checklist |
 | Universal guide structure | Gelo | ✅ [`universal-guide-structure.md`](universal-guide-structure.md) | Defines the sections that the guide update agent writes to |
 
 ---
